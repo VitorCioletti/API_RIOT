@@ -1,0 +1,16 @@
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe.config
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.csprojResolveAssemblyReference.cache
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CiolettiVitor\Desktop\AED\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe.config
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.csprojResolveAssemblyReference.cache
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.pdb
