@@ -15,5 +15,7 @@ namespace riotAPI_teste
         public long revisionDate { get; set; }
         public int summonerLevel  { get; set; }
         public string region { get; set; }
+        public List<Match> rankedMatches = new List<Match>();
     }
+
 }

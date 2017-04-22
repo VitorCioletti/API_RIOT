@@ -18,7 +18,7 @@ namespace riotAPI_teste
             summoner.region = Console.ReadLine();
             Server server = new Server(summoner.name, summoner.region);
             server.summonerSearch(summoner.region);
-            server.rankedStats();
+            server.recentMatches();
             Console.ReadKey();
         }
     }
