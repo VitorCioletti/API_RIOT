@@ -35,36 +35,36 @@ namespace riotAPI_teste
             } catch (Exception) { Console.WriteLine("Sem conexão de internet"); return null;}
             //COMO FECHAR RESPONSE E REQUEST? (CLOSE)
         }
-        private dynamic serializeJson(string json) {
+        private dynamic deserializeJson(string json) {
             var serializer = new JavaScriptSerializer();
             dynamic result = serializer.DeserializeObject(json);
             return result;            
         }
 
-        public void summonerSearch(string region) {
+        public Summoner summonerSearch(string region) {
             apiSummonerName = "/v1.4/summoner/by-name/";
-            if (region == "" || summoner.name == "") return;
+            if (region == "" || summoner.name == "") return null;
             try{
                 aUrl = "https://" + region.ToLower() + apiPvpNet + region.ToUpper() + apiSummonerName + this.summoner.name +"?"+apiKey;
                 string json = httpRequest(aUrl).ReadToEnd();
-                dynamic result = serializeJson(json);
-                Process.Start(aUrl);
-                var summoner = JsonConvert.DeserializeObject<Wrapper>(json).summoner;
-                Console.WriteLine("Id: {0}  Profile Icon: {1}  Revision Date: {2} Name: {3} Level: {4}",summoner.id,summoner.profileIconId,summoner.revisionDate,summoner.name, summoner.summonerLevel);
+                dynamic result = deserializeJson(json);
+                this.summoner = JsonConvert.DeserializeObject<Wrapper>(json).summoner;
+                this.summoner.region = region;
+                return this.summoner;
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.StackTrace);
+                return null;
             }
         }
-        public void recentMatches(){
+        public dynamic recentMatches(){
             string rankedSeason = summoner.region;
             string matchStats = "https://br.api.riotgames.com/api/lol/";
             string detailStats = "/v1.3/game/by-summoner/";
             aUrl = matchStats + this.summoner.region + detailStats + this.summoner.id+"/recent?" + apiKey;
             string json = httpRequest(aUrl).ReadToEnd();
-            Dictionary<string, dynamic> recentMatches = serializeJson(json);
-            //CONTINUAR DAQUI
-            Process.Start(aUrl);
+            var recentMatches = JsonConvert.DeserializeObject<MatchWrapper>(json);
+            return recentMatches;
         }
     }
 }

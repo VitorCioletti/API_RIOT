@@ -12,5 +12,12 @@ namespace riotAPI_teste
         [JsonProperty("afnar")]  //COMO ALTERAR ESSA PROPRIEDADE DE ACORDO COM A ENTRADA DO USER?
         public Summoner summoner { get; set; }
     }
+    class MatchWrapper 
+    {
+        [JsonProperty("summonerId")]
+        public int summonerId { get; set; }
+        [JsonProperty("games")]
+        public Match[] games = new Match[10]; //Api sempre retorna ultimas 10 partidas.
+    }
 
 }

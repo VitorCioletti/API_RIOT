@@ -17,7 +17,11 @@ namespace riotAPI_teste
             Console.Write("\nRegião: ");
             summoner.region = Console.ReadLine();
             Server server = new Server(summoner.name, summoner.region);
-            server.summonerSearch(summoner.region);
+            Console.WriteLine("\n\nSummoner ID: " + server.summonerSearch(summoner.region).id+"\n");
+            MatchWrapper recentMatches = server.recentMatches();
+            for (int i = 0; i < recentMatches.games.Length; i++){
+                Console.WriteLine("Game Id: "+ recentMatches.games[i].gameId + " Vitoria: " + recentMatches.games[i].stats.win);
+            }
             server.recentMatches();
             Console.ReadKey();
         }
