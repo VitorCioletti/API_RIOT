@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 
 
@@ -32,8 +29,8 @@ namespace riotAPI_teste
                 WebResponse response = request.GetResponse();
                 StreamReader document = new StreamReader(response.GetResponseStream(), System.Text.Encoding.UTF8);
                 return document;
-            } catch (Exception) { Console.WriteLine("Sem conexão de internet"); return null;}
-            //COMO FECHAR RESPONSE E REQUEST? (CLOSE)
+            } catch (Exception ex) {Console.WriteLine(ex.StackTrace); return null;}
+            //HOW DO I CLOSE REQUEST AND RESPONSE? '-'
         }
         private dynamic deserializeJson(string json) {
             var serializer = new JavaScriptSerializer();

@@ -20,7 +20,7 @@ namespace riotAPI_teste
             Console.WriteLine("\n\nSummoner ID: " + server.summonerSearch(summoner.region).id+"\n");
             MatchWrapper recentMatches = server.recentMatches();
             for (int i = 0; i < recentMatches.games.Length; i++){
-                Console.WriteLine("Game Id: "+ recentMatches.games[i].gameId + " Vitoria: " + recentMatches.games[i].stats.win);
+                Console.WriteLine("Game Id: "+ recentMatches.games[i].gameId + " Vitoria: " + recentMatches.games[i].stats.win + " Champion: "+ recentMatches.games[i].championId);
             }
             server.recentMatches();
             Console.ReadKey();

@@ -23,7 +23,6 @@ namespace riotAPI_teste
         public int summonerLevel  { get; set; }
         [JsonProperty("region")]
         public string region { get; set; }
-        public List<Match> rankedMatches = new List<Match>();
     }
 
 }
