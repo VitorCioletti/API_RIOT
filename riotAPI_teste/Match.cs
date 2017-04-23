@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace riotAPI_teste
 {
     class Match
     {
+        [JsonProperty("summonerId")]
         public int summonerId { get; set; }
         public string gameId { get; set; }
         public bool invalid { get; set; }

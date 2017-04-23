@@ -45,15 +45,11 @@ namespace riotAPI_teste
             apiSummonerName = "/v1.4/summoner/by-name/";
             if (region == "" || summoner.name == "") return;
             try{
-                aUrl = "https://" + region.ToLower() + apiPvpNet + region.ToUpper() + apiSummonerName + summoner.name +"?"+apiKey;
+                aUrl = "https://" + region.ToLower() + apiPvpNet + region.ToUpper() + apiSummonerName + this.summoner.name +"?"+apiKey;
                 string json = httpRequest(aUrl).ReadToEnd();
                 dynamic result = serializeJson(json);
-                Console.WriteLine(result[summoner.name.ToLower()]["id"]);
-                this.summoner.id = (Convert.ToString(result[summoner.name.ToLower()]["id"]));
-                this.summoner.profileIconId = (Convert.ToString(result[summoner.name.ToLower()]["profileIconId"]));
-                this.summoner.summonerLevel = (result[summoner.name.ToLower()]["summonerLevel"]);
-                this.summoner.revisionDate = (result[summoner.name.ToLower()]["revisionDate"]);
-                this.summoner.name = (Convert.ToString(result[summoner.name.ToLower()]["name"]));
+                Process.Start(aUrl);
+                var summoner = JsonConvert.DeserializeObject<Wrapper>(json).summoner;
                 Console.WriteLine("Id: {0}  Profile Icon: {1}  Revision Date: {2} Name: {3} Level: {4}",summoner.id,summoner.profileIconId,summoner.revisionDate,summoner.name, summoner.summonerLevel);
             }
             catch (Exception ex) {

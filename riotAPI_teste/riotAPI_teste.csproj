@@ -52,6 +52,7 @@
     <Compile Include="Match.cs" />
     <Compile Include="Summoner.cs" />
     <Compile Include="Server.cs" />
+    <Compile Include="Wrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
