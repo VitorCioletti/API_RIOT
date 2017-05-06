@@ -20,8 +20,8 @@ namespace riotAPI_teste
         [JsonProperty("subType")]
         public string subType { get; set; }
         [JsonProperty("mapId")]
-        public int mapId { get; set; }
-        [JsonProperty("teamId")]
+        public int mapId { get  ; set; }
+        [JsonProperty("teamId/")]
         public int teamId { get; set; }
         [JsonProperty("championId")]
         public int championId { get; set; }

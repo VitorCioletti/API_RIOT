@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace riotAPI_teste
@@ -17,7 +13,7 @@ namespace riotAPI_teste
         public string profileIconId { get; set; }
         [JsonProperty("id")]
         public string id { get; set; }
-        [JsonProperty("revisionDate")]
+        [JsonProperty("revisionDate")] //Convert to DateTime (DATETIMECONVERTERFROMLONG)
         public long revisionDate { get; set; }
         [JsonProperty("SummonerLevel")]
         public int summonerLevel  { get; set; }
