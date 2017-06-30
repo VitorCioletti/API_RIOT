@@ -22,3 +22,11 @@ C:\Users\CiolettiVitor\Desktop\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\Ne
 C:\Users\CiolettiVitor\Desktop\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.csprojResolveAssemblyReference.cache
 C:\Users\CiolettiVitor\Desktop\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.exe
 C:\Users\CiolettiVitor\Desktop\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.csprojResolveAssemblyReference.cache
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\obj\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe.config
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.exe
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\riotAPI_teste.pdb
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CiolettiVitor\Desktop\Desenvolvimento\API_Riot\riotAPI_teste\riotAPI_teste\bin\Debug\Newtonsoft.Json.xml
