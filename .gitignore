@@ -6,4 +6,8 @@ TestResults/
 *.nupkg
 .vs/
 project.lock.json
+<<<<<<< HEAD
 RiotKey.cs
+=======
+RiotKey.cs
+>>>>>>> 37d1915515dcb4e49e815c8e5405f1a45633cef7
