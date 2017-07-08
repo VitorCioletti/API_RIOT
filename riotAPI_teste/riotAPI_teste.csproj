@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Champion.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Info.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Skin.cs" />
+    <Compile Include="Entities\Stats.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

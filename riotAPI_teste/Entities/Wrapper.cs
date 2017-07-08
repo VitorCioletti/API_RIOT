@@ -19,9 +19,4 @@ namespace riotAPI_teste
         [JsonProperty("games")]
         public Match[] games = new Match[10];
     }
-    class ChampionWrapper
-    {
-
-    }
-
 }
