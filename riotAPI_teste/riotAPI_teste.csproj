@@ -46,20 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Block.cs" />
     <Compile Include="Entities\Champion.cs" />
     <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\Info.cs" />
     <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\LevelTip.cs" />
+    <Compile Include="Entities\Passive.cs" />
+    <Compile Include="Entities\Recommended.cs" />
     <Compile Include="Entities\Skin.cs" />
+    <Compile Include="Entities\Spell.cs" />
     <Compile Include="Entities\Stats.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="Entities\Vars.cs" />
+    <Compile Include="Enums\RegionEnum.cs" />
+    <Compile Include="Wrappers\ChampionWrapper.cs" />
+    <Compile Include="Wrappers\MatchWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Match.cs" />
-    <Compile Include="RiotKey.cs" />
-    <Compile Include="Summoner.cs" />
-    <Compile Include="Server.cs" />
-    <Compile Include="Wrapper.cs" />
+    <Compile Include="Entities\Match.cs" />
+    <Compile Include="APIKey\RiotKey.cs" />
+    <Compile Include="Entities\Summoner.cs" />
+    <Compile Include="APIConnection\Server.cs" />
+    <Compile Include="Wrappers\SummonerWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

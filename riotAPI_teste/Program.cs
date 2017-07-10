@@ -23,8 +23,8 @@ namespace riotAPI_teste
             for (int i = 0; i < recentMatches.games.Length; i++){
                 Console.WriteLine("Game Id: "+ recentMatches.games[i].gameId + " Vitoria: " + recentMatches.games[i].stats.win + " Champion: "+ recentMatches.games[i].championId);
             }
+            
             server.recentMatches();
-            string facebook = server.httpRequest("https://discussion.developer.riotgames.com/index.html").ReadToEnd();
             server.getChampions();
             Console.ReadKey();
         }
