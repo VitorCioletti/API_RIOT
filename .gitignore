@@ -5,6 +5,10 @@ TestResults/
 *.suo
 *.nupkg
 .vs/
+.pdb
+.exe
+.cache
+.csproj
 project.lock.json
 <<<<<<< HEAD
 RiotKey.cs
