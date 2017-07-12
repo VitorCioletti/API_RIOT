@@ -13,7 +13,7 @@ namespace riotAPI_teste
         public string profileIconId { get; set; }
         [JsonProperty("id")]
         public string id { get; set; }
-        [JsonProperty("revisionDate")] //Convert to DateTime (DATETIMECONVERTERFROMLONG)
+        [JsonProperty("revisionDate")]
         public long revisionDate { get; set; }
         [JsonProperty("SummonerLevel")]
         public int summonerLevel  { get; set; }

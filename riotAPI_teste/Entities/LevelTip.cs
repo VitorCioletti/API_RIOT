@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace riotAPI_teste.Entities
+namespace riotAPI_teste
 {
     class LevelTip
     {
         [JsonProperty("label")]
-        public string[] label;
+        public string[] label { get; set; }
         [JsonProperty("effect")]
-        public string[] effect;
+        public string[] effect { get; set; }
     }
 }

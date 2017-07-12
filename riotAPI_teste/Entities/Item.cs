@@ -10,8 +10,8 @@ namespace riotAPI_teste
     class Item
     {
         [JsonProperty("id")]
-        public int id;
+        public int id { get; set; }
         [JsonProperty("count")]
-        public int count;
+        public int count { get; set; }
     }
 }

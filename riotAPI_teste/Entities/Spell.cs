@@ -5,49 +5,49 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace riotAPI_teste.Entities
+namespace riotAPI_teste
 {
     class Spell
     {
         [JsonProperty("name")]
-        public string name;
+        public string name { get; set; }
         [JsonProperty("description")]
-        public string description;
+        public string description { get; set; }
         [JsonProperty("sanitizedDescription")]
-        public string sanitizedDescription;
+        public string sanitizedDescription { get; set; }
         [JsonProperty("toolTip")]
-        public string toolTip;
+        public string toolTip { get; set; }
         [JsonProperty("sanitizedToolTip")]
-        public string sanitizedToolTip;
+        public string sanitizedToolTip { get; set; }
         [JsonProperty("levelTip")]
-        public LevelTip[] levelTip;
+        public LevelTip levelTip { get; set; }
         [JsonProperty("image")]
-        public Image image;
+        public Image image { get; set; }
         [JsonProperty("resource")]
-        public string resource;
+        public string resource { get; set; }
         [JsonProperty("maxRank")]
-        public int maxRank;
+        public int maxRank { get; set; }
         [JsonProperty("cost")]
-        public int[] cost;
+        public int[] cost { get; set; }
         [JsonProperty("costType")]
-        public string costType;
+        public string costType { get; set; }
         [JsonProperty("costBurn")]
-        public string costBurn;
+        public string costBurn { get; set; }
         [JsonProperty("coolDown")]
-        public int[] coolDown;
+        public string[] coolDown { get; set; }
         [JsonProperty("coolDownBurn")]
-        public string coolDownBurn;
+        public string coolDownBurn { get; set; }
         [JsonProperty("effect")]
-        public Dictionary<int, int> effect;
+        public IDictionary<int, Int32[]> effect { get; set; }
         [JsonProperty("effectBurn")]
-        public string[] effectBurn;
+        public string[] effectBurn { get; set; }
         [JsonProperty("vars")]
-        public Vars[] vars;
+        public Vars[] vars { get; set; }
         [JsonProperty("range")]
-        public int[] range;
+        public int[] range { get; set; }
         [JsonProperty("rangeBurn")]
-        public string rangeBurn;
+        public string rangeBurn { get; set; }
         [JsonProperty("key")]
-        public string key;
+        public string key { get; set; }
     }
 }

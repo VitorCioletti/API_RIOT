@@ -56,7 +56,7 @@
     <Compile Include="Entities\Recommended.cs" />
     <Compile Include="Entities\Skin.cs" />
     <Compile Include="Entities\Spell.cs" />
-    <Compile Include="Entities\Stats.cs" />
+    <Compile Include="Entities\Stat.cs" />
     <Compile Include="Entities\Vars.cs" />
     <Compile Include="Enums\RegionEnum.cs" />
     <Compile Include="Wrappers\ChampionWrapper.cs" />
