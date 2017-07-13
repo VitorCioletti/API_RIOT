@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIConnection\HttpRequest.cs" />
     <Compile Include="Entities\Block.cs" />
     <Compile Include="Entities\Champion.cs" />
     <Compile Include="Entities\Image.cs" />

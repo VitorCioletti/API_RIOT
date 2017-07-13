@@ -38,7 +38,7 @@ namespace riotAPI_teste
         [JsonProperty("coolDownBurn")]
         public string coolDownBurn { get; set; }
         [JsonProperty("effect")]
-        public IDictionary<int, Int32[]> effect { get; set; }
+        public Dictionary<string, string[]> effect { get; set; }
         [JsonProperty("effectBurn")]
         public string[] effectBurn { get; set; }
         [JsonProperty("vars")]

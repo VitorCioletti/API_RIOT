@@ -12,8 +12,7 @@ namespace riotAPI_teste
 {
     class Server
     {
-        private static Summoner summoner;
-        private static string apiSummonerName;
+        private static HttpRequest httpRequest;
         private static RiotKey key = new RiotKey();
         private static string apiPvpNet = ".api.riotgames.com/api/lol/";
         private string aUrl;
@@ -21,62 +20,32 @@ namespace riotAPI_teste
         
         private Server() { }
 
-        public static Server GetInstance(string name, string region)
+        public static Server GetInstance()
         {
-            if (summoner == null){
-                summoner = new Summoner();
-                summoner.name = name;
-                summoner.region = region;
+            if (Server.server == null){
+                httpRequest = new HttpRequest();
                 server = new Server();
                 return server;
-            }
-            else {
+            } else {
                 return server;
             }
-        }
-        /// <summary>
-        /// Requests data from RIOT API
-        /// </summary>
-        /// <param name="url"> API url</param>
-        /// <returns>StreamReader object with json string</returns>
-        public StreamReader httpRequest(string url){
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            try{
-                WebResponse response = request.GetResponse();
-                StreamReader document = new StreamReader(response.GetResponseStream(), System.Text.Encoding.UTF8);
-                return document;
-            } catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
-        }
-        /// <summary>
-        /// Deserialize json
-        /// </summary>
-        /// <param name="json">JSON to be deserialized</param>
-        /// <returns>Dynamic type of json deserialized</returns>
-        private dynamic deserializeJson(string json)
-        {
-            var serializer = new JavaScriptSerializer();
-            var result = serializer.DeserializeObject(json);
-            return result;            
         }
         /// <summary>
         /// Requests information of a certain summoner from server.
         /// </summary>
         /// <param name="region">Region of the sumonner</param>
         /// <returns>Summoner type</returns>
-        public Summoner summonerSearch(string region)
+        public Summoner summonerSearch(Summoner summoner)
         {
-            apiSummonerName = "/v1.4/summoner/by-name/";
-            if (region == "" || summoner.name == "") return null;
+            string apiSummonerName = "/v1.4/summoner/by-name/";
+            if (summoner.region == "" || summoner.name == "")
+                return null;
             try{
-                aUrl = "https://" + region.ToLower() + apiPvpNet + region.ToUpper() + apiSummonerName + Server.summoner.name +"?"+Server.key.apiKey;
-                string json = httpRequest(aUrl).ReadToEnd();
-                Server.summoner = JsonConvert.DeserializeObject<SummonerWrapper>(json).summoner;
-                Server.summoner.region = region;
-                return Server.summoner;
+                aUrl = "https://" + summoner.region.ToLower() + apiPvpNet + summoner.region.ToUpper() + apiSummonerName + summoner.name +"?"+Server.key.apiKey;
+                string json = Server.httpRequest.getJson(aUrl).ReadToEnd();
+                Summoner response = JsonConvert.DeserializeObject<SummonerWrapper>(json).summoner;
+                response.region = summoner.region;
+                return response;
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.StackTrace);
@@ -87,21 +56,24 @@ namespace riotAPI_teste
         /// Gets 10 recent matches from a certain user that is already created in the program
         /// </summary>
         /// <returns>List of recent matches</returns>
-        public MatchWrapper recentMatches()
-        {         
-            string rankedSeason = summoner.region;
-            string matchStats = "https://br.api.riotgames.com/api/lol/";
-            string detailStats = "/v1.3/game/by-summoner/";
-            aUrl = matchStats + Server.summoner.region + detailStats + Server.summoner.id+"/recent?" + Server.key.apiKey;
-            string json = httpRequest(aUrl).ReadToEnd();
-            MatchWrapper recentMatches = JsonConvert.DeserializeObject<MatchWrapper>(json);
-            return recentMatches;
+        public MatchWrapper recentMatches(Summoner summoner)
+        {
+            if (summoner.id != null) {
+                string rankedSeason = summoner.region;
+                string matchStats = "https://br.api.riotgames.com/api/lol/";
+                string detailStats = "/v1.3/game/by-summoner/";
+                aUrl = matchStats + summoner.region + detailStats + summoner.id + "/recent?" + Server.key.apiKey;
+                string json = Server.httpRequest.getJson(aUrl).ReadToEnd();
+                MatchWrapper recentMatches = JsonConvert.DeserializeObject<MatchWrapper>(json);
+                return recentMatches;
+            } else
+                return null;
         }
         public ChampionWrapper getChampions()
         {
             string value = "https://br1.api.riotgames.com/lol/static-data/v3/champions?champListData=all&dataById=true&";
             aUrl = value + Server.key.apiKey;
-            string json = httpRequest(aUrl).ReadToEnd();
+            string json = Server.httpRequest.getJson(aUrl).ReadToEnd();
             ChampionWrapper champions = JsonConvert.DeserializeObject<ChampionWrapper>(json);
             return champions;
         } 
