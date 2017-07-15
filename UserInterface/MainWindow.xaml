@@ -7,28 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1100" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DockPanel>
-            <Menu DockPanel.Dock="Top" Background="#333" Height="70">
-                <Image Source="lol.png" Stretch="Fill" Height="55" Width="150"/>
-                <MenuItem Icon="" Height="70"/>
-                <MenuItem Icon="" Height="70"/>
-            </Menu>
-            <StackPanel>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="50">
-                        <TextBlock FontWeight="Bold" Text="Champion name"/>
-                        <Image Source="fiora.png" Stretch="UniformToFill" Height="400" Width="300" HorizontalAlignment="Left"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Width="430" Height="400" HorizontalAlignment="Right" Margin="0,0,60,0">
-                        <TextBlock Text="Lore" FontWeight="Bold" FontSize="15"/>
-                        <TextBlock Height="130" Background="PaleGoldenrod"  FontSize="18" Text=""/>
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
-        </DockPanel>
+        <!--Menu-->
+        <Menu Background="#333" Height="70" VerticalAlignment="Top">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <!--Champions list button-->
+            <Button Height="69" Width="230" Background="Transparent" BorderThickness="0" Margin="-10" ToolTip="Champions list">
+                <Image Source="C:\Users\CiolettiVitor\Desktop\lolchamp.png" Stretch="Fill"/>
+            </Button>
+            <!--Exit button-->
+            <Button Height="52" Background="Transparent" BorderThickness="0" ToolTip="Exit" Content="X" FontSize="22"/>
+
+        </Menu>
+        
     </Grid>
 </Window>

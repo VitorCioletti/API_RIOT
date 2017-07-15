@@ -5,14 +5,14 @@ namespace riotAPI_teste
     class ChampionWrapper
     {
         [JsonProperty("data")]
-        public Dictionary<int, Champion> data;
+        public Dictionary<int, Champion> data { get; set; }
         [JsonProperty("keys")]
-        public Dictionary<int, string> keys;
+        public Dictionary<int, string> keys { get; set; }
         [JsonProperty("format")]
-        public string format;
+        public string format { get; set; }
         [JsonProperty("type")]
-        public string type;
+        public string type { get; set; }
         [JsonProperty("version")]
-        public string version;
+        public string version { get; set; }
     }
 }
