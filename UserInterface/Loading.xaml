@@ -6,12 +6,10 @@
       xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:local="clr-namespace:UserInterface"
       mc:Ignorable="d"
-      Width="280" Height="400"
+      Width="400" Height="400"
       Title="Loading" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="WhiteSmoke">
-
-    <Grid>
-        <Label Content="Loading..." HorizontalAlignment="Center" FontSize="24" Height="40" VerticalAlignment="Top"/>
-        <Image gif:ImageBehavior.AnimatedSource="C:\Users\CiolettiVitor\Desktop\loading.gif" VerticalAlignment="Top" Height="120" Margin="0,40,0,0"></Image>
-        <Image Source="C:\Users\CiolettiVitor\Desktop\jinx_exit.png" Height="300" Margin="0,116,0,-16"/>
-    </Grid>
+        <Grid>
+            <Image gif:ImageBehavior.AnimatedSource="../Content/gif/loading1.gif"/>
+            <Label Content="Loading..." HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="30" Height="45" VerticalAlignment="Top"/>
+        </Grid>
 </Window>
