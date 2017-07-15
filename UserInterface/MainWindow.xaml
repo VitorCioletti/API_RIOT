@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="700" Width="1150" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
             <!--Menu-->
@@ -30,8 +30,8 @@
                     </Grid.ColumnDefinitions>
                     <!--Left Panel-->
                     <StackPanel Grid.Column="0">
-                        <Label Content="Name" FontSize="29" Margin="40,30,0,0"/>
-                        <Label Content="Title" FontSize="20" Margin="40,0,0,0"/>
+                        <Label Content="Name" FontSize="29" Margin="20,30,0,0"/>
+                        <Label Content="Title" FontSize="20" Margin="20,0,0,0"/>
                         <!--Champion image and informations-->
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -41,19 +41,19 @@
                             <!--Image and skins-->
                             <StackPanel Grid.Column="0">
                                 <!--Champion image-->
-                                <Image Source="C:\Users\CiolettiVitor\Desktop\fiora.jpg" Width="300" HorizontalAlignment="Left" Margin="40,0,0,0" Height="380" Stretch="Uniform"/>
+                                <Image Source="C:\Users\CiolettiVitor\Desktop\fiora.jpg" Width="300" HorizontalAlignment="Left" Margin=",0,0,0" Height="380" Stretch="Uniform"/>
                                 <!--Champion skins-->
-                                <Grid Margin="40,5,0,0">
+                                <Grid Margin="20,5,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin1" Source="C:\Users\CiolettiVitor\Desktop\fioraskin1.jpg"/>
-                                    <Image Grid.Column="1" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin2" Source="C:\Users\CiolettiVitor\Desktop\fioraskin2.jpg"/>
-                                    <Image Grid.Column="2" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin3" Source="C:\Users\CiolettiVitor\Desktop\fioraskin3.jpg"/>
-                                    <Image Grid.Column="3" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin4" Source="C:\Users\CiolettiVitor\Desktop\fioraskin4.jpg"/>
+                                    <Image Grid.Column="0" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin1" Source="C:\Users\CiolettiVitor\Desktop\fioraskin1.jpg"/>
+                                    <Image Grid.Column="1" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin2" Source="C:\Users\CiolettiVitor\Desktop\fioraskin2.jpg"/>
+                                    <Image Grid.Column="2" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin3" Source="C:\Users\CiolettiVitor\Desktop\fioraskin3.jpg"/>
+                                    <Image Grid.Column="3" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin4" Source="C:\Users\CiolettiVitor\Desktop\fioraskin4.jpg"/>
                                 </Grid>
                             </StackPanel>
                             <!--Champion informations and spells-->
@@ -85,9 +85,36 @@
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-                    <!--Right Panel-->
-                    <StackPanel Grid.Column="1">
-
+                    <!--Right Panel (Champion lore and stats)-->
+                    <StackPanel Grid.Column="1" Margin="20,35,0,0">
+                        <!--Lore-->
+                        <Label Content="Lore" FontSize="25"/>
+                        <Label FontSize="13">
+                            <AccessText TextWrapping="WrapWithOverflow" TextAlignment="Justify">
+                                There have always been those within Noxus who did not agree with the evils perpetrated by the Noxian High Command. The High Command had just put down a coup attempt from the self-proclaimed Crown Prince Raschallion, and a crackdown on any form of dissent against the new government was underway. These political and social outcasts, known as the Gray Order, sought to leave their neighbors in peace as they pursued dark arcane knowledge.The leaders of this outcast society were a married couple: Gregori Hastur, the Gray Warlock, and his wife Amoline, the Shadow Witch. Together they led an exodus of magicians and other intelligentsia from Noxus, resettling their followers beyond the Great Barrier to the northern reaches of the unforgiving Voodoo Lands. Though survival was a challenge at times, the Gray Order's colony managed to thrive in a land where so many others would have failed.
+                                 Years after the exodus, Gregori and Amoline had a child: Annie. Early on, Annie's parents knew there was something special about their daughter. At the age of two, Annie miraculously ensorcelled a shadow bear - a ferocious denizen of the petrified forests outside the colony - turning it into her pet. To this day she keeps her bear ''Tibbers'' by her side, often keeping him spellbound as a stuffed doll to be carried like a child's toy. The combination of Annie's lineage and the dark magic of her birthplace have given this little girl tremendous arcane power."
+                            </AccessText>
+                        </Label>
+                        <!--Stats-->
+                        <Label Content="Stats" FontSize="25"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Label Content="Attack:" FontSize="15"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                
+                            </Grid>
+                        </Grid>
                     </StackPanel>
                 </Grid>
             </StackPanel>
