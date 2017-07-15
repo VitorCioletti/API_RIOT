@@ -7,21 +7,90 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1100" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <!--Menu-->
-        <Menu Background="#333" Height="70" VerticalAlignment="Top">
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-            <!--Champions list button-->
-            <Button Height="69" Width="230" Background="Transparent" BorderThickness="0" Margin="-10" ToolTip="Champions list">
-                <Image Source="C:\Users\CiolettiVitor\Desktop\lolchamp.png" Stretch="Fill"/>
-            </Button>
-            <!--Exit button-->
-            <Button Height="52" Background="Transparent" BorderThickness="0" ToolTip="Exit" Content="X" FontSize="22"/>
+        <StackPanel>
+            <!--Menu-->
+            <Menu Background="#333" Height="70" VerticalAlignment="Top">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+                <!--Champions list button-->
+                <Button Height="70" Width="230" Background="Transparent" BorderThickness="0" Margin="-10" ToolTip="Champions list">
+                    <Image Source="C:\Users\CiolettiVitor\Desktop\lolchamp.png" Stretch="Fill"/>
+                </Button>
+                <!--Exit button-->
+                <Button Height="52" Background="Transparent" BorderThickness="0" ToolTip="Exit" Content="X" FontSize="22"/>
+            </Menu>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Left Panel-->
+                    <StackPanel Grid.Column="0">
+                        <Label Content="Name" FontSize="29" Margin="40,30,0,0"/>
+                        <Label Content="Title" FontSize="20" Margin="40,0,0,0"/>
+                        <!--Champion image and informations-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Image and skins-->
+                            <StackPanel Grid.Column="0">
+                                <!--Champion image-->
+                                <Image Source="C:\Users\CiolettiVitor\Desktop\fiora.jpg" Width="300" HorizontalAlignment="Left" Margin="40,0,0,0" Height="380" Stretch="Uniform"/>
+                                <!--Champion skins-->
+                                <Grid Margin="40,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin1" Source="C:\Users\CiolettiVitor\Desktop\fioraskin1.jpg"/>
+                                    <Image Grid.Column="1" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin2" Source="C:\Users\CiolettiVitor\Desktop\fioraskin2.jpg"/>
+                                    <Image Grid.Column="2" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin3" Source="C:\Users\CiolettiVitor\Desktop\fioraskin3.jpg"/>
+                                    <Image Grid.Column="3" Width="57" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin4" Source="C:\Users\CiolettiVitor\Desktop\fioraskin4.jpg"/>
+                                </Grid>
+                            </StackPanel>
+                            <!--Champion informations and spells-->
+                            <StackPanel Grid.Column="1">
+                                <!--Champion info-->
+                                <Label Content="Attack" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                                <ProgressBar Margin="10,0,0,0"/>
+                                <Label Content="Defense" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                                <ProgressBar Margin="10,0,0,0"/>
+                                <Label Content="Magic" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                                <ProgressBar Margin="10,0,0,0"/>
+                                <Label Content="Difficulty" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                                <ProgressBar Margin="10,0,0,0"/>
+                                <Label Content="[Tags]" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
+                                <!--Champion spells-->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Grid.Column="0" Source="C:\Users\CiolettiVitor\Desktop\FioraQ.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill Q"/>
+                                    <Image  Grid.Column="1" Source="C:\Users\CiolettiVitor\Desktop\FioraW.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill W"/>
+                                    <Image  Grid.Column="2" Source="C:\Users\CiolettiVitor\Desktop\FioraE.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill E"/>
+                                    <Image  Grid.Column="3" Source="C:\Users\CiolettiVitor\Desktop\FioraR.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill R"/>
+                                </Grid>
+                                <Label Content="Tips" FontSize="16" Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <!--Right Panel-->
+                    <StackPanel Grid.Column="1">
 
-        </Menu>
-        
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
