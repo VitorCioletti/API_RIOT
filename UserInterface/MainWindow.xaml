@@ -17,7 +17,7 @@
                 </Menu.ItemsPanel>
                 <!--Champions list button-->
                 <Button Height="70" Width="230" Background="Transparent" BorderThickness="0" Margin="-10" ToolTip="Champions list">
-                    <Image Source="../Content/images/lolchamp.png" Stretch="Fill"/>
+                    <Image Source="Content/images/lolchamp.png" Stretch="Fill"/>
                 </Button>
                 <!--Exit button-->
                 <Button Height="52" Background="Transparent" BorderThickness="0" ToolTip="Exit" Content="X" FontSize="22" Click="Button_Click"/>
@@ -41,7 +41,7 @@
                             <!--Image and skins-->
                             <StackPanel Grid.Column="0">
                                 <!--Champion image-->
-                                <Image Source="../Content/images/fiora.jpg" Width="300" HorizontalAlignment="Left" Margin="20,0,0,0" Height="380" Stretch="Uniform"/>
+                                <Image Source="Content/images/fiora.jpg" Width="300" HorizontalAlignment="Left" Margin="20,0,0,0" Height="380" Stretch="Uniform"/>
                                 <!--Champion skins-->
                                 <Grid Margin="20,5,0,0">
                                     <Grid.ColumnDefinitions>
@@ -50,10 +50,10 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin1" Source="../Content/images/fioraskin1.jpg"/>
-                                    <Image Grid.Column="1" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin2" Source="../Content/images/fioraskin2.jpg"/>
-                                    <Image Grid.Column="2" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin3" Source="../Content/images/fioraskin3.jpg"/>
-                                    <Image Grid.Column="3" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin4" Source="../Content/images/fioraskin4.jpg"/>
+                                    <Image Grid.Column="0" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin1" Source="Content/images/fioraskin1.jpg"/>
+                                    <Image Grid.Column="1" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin2" Source="Content/images/fioraskin2.jpg"/>
+                                    <Image Grid.Column="2" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin3" Source="Content/images/fioraskin3.jpg"/>
+                                    <Image Grid.Column="3" Width="60" Height="65" HorizontalAlignment="Center"  Stretch="Fill" ToolTip="Skin4" Source="Content/images/fioraskin4.jpg"/>
                                 </Grid>
                             </StackPanel>
                             <!--Champion informations and spells-->
@@ -76,17 +76,17 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image  Grid.Column="0" Source="../Content/images/FioraQ.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill Q"/>
-                                    <Image  Grid.Column="1" Source="../Content/images/FioraW.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill W"/>
-                                    <Image  Grid.Column="2" Source="../Content/images/FioraE.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill E"/>
-                                    <Image  Grid.Column="3" Source="../Content/images/FioraR.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill R"/>
+                                    <Image  Grid.Column="0" Source="Content/images/FioraQ.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill Q"/>
+                                    <Image  Grid.Column="1" Source="Content/images/FioraW.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill W"/>
+                                    <Image  Grid.Column="2" Source="Content/images/FioraE.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill E"/>
+                                    <Image  Grid.Column="3" Source="Content/images/FioraR.png" Margin="10,15,0,0" Width="55" ToolTip="Name skill R"/>
                                 </Grid>
                                 <Label Content="Tips" FontSize="16" Margin="0,10,0,0"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
                     <!--Right Panel (Champion lore and stats)-->
-                    <StackPanel Grid.Column="1" Margin="20,35,0,0">
+                    <StackPanel Grid.Column="1" Margin="10,35,20,0">
                         <!--Lore-->
                         <Label Content="Lore" FontSize="25"/>
                         <Label FontSize="13">
@@ -103,13 +103,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Attack:" FontSize="15"/>
-                                </Grid>
+                                <DataGrid></DataGrid>
                             </Grid>
                             <Grid Grid.Column="1">
                                 

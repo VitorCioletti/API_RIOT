@@ -9,7 +9,7 @@
       Width="400" Height="400"
       Title="Loading" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="WhiteSmoke">
         <Grid>
-            <Image gif:ImageBehavior.AnimatedSource="../Content/gif/loading1.gif"/>
+            <Image gif:ImageBehavior.AnimatedSource="Content/gif/loading3.gif"/>
             <Label Content="Loading..." HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="30" Height="45" VerticalAlignment="Top"/>
         </Grid>
 </Window>

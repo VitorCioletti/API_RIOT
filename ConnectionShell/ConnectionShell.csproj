@@ -59,7 +59,8 @@
     <Compile Include="Entities\Spell.cs" />
     <Compile Include="Entities\Stat.cs" />
     <Compile Include="Entities\Vars.cs" />
-    <Compile Include="Enums\RegionEnum.cs" />
+    <Compile Include="Update\DownloadImages.cs" />
+    <Compile Include="Update\ImagesUri.cs" />
     <Compile Include="Wrappers\ChampionWrapper.cs" />
     <Compile Include="Wrappers\MatchWrapper.cs" />
     <Compile Include="Program.cs" />
