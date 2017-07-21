@@ -5,11 +5,11 @@ namespace riotAPI_teste
     class Vars
     {
         [JsonProperty("key")]
-        public string key { get; set; }
+        public string Key { get; set; }
         [JsonProperty("link")]
-        public string link { get; set; }
+        public string Link { get; set; }
         [JsonProperty("coeff")]
-        public double[] coeff { get; set; }
+        public double[] Coeff { get; set; }
 
     }
 }

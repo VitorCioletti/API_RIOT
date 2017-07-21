@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
-using RestSharp.Authenticators;
 using System;
 using System.Configuration;
 using System.Net;
