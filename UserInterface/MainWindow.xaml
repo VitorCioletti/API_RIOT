@@ -188,17 +188,31 @@
                             </AccessText>
                         </Label>
                         <!--Stats-->
-                        <Label Content="Stats" FontSize="25"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-
+                                <Label Content="Stats" FontSize="25"/>
                             </Grid>
                             <Grid Grid.Column="1">
+                                <Label Content="Check this champ at:" HorizontalContentAlignment="Center" FontSize="23"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <Image Source="C:\Users\CiolettiVitor\Desktop\Content\lolking.png" ToolTip="" Width="90" Height="90" Margin="0,23,0,0"/>
+                                        <Image Source="C:\Users\CiolettiVitor\Desktop\Content\lolking.png" ToolTip="" Width="90" Height="90" Margin="0,0,0,0"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1">
+                                        <Image Source="C:\Users\CiolettiVitor\Desktop\Content\lolking.png" Width="90" ToolTip="" Height="90" Margin="0,23,0,0"/>
+                                        <Image Source="C:\Users\CiolettiVitor\Desktop\Content\lolking.png" Width="90" ToolTip="" Height="90" Margin="0,0,0,0"/>
+                                    </StackPanel>
 
+                                </Grid>
                             </Grid>
                         </Grid>
                     </StackPanel>
