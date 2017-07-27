@@ -6,7 +6,7 @@ Development of a single user interface that shows all League of Legends champion
 ## User Interface
   There are 2 main windows. The first one allows users to chose a champion and the other one shows the champions stats.
   
-<img src="![capturar](https://user-images.githubusercontent.com/13967326/28651663-8671bc28-7259-11e7-9309-7caeea0ef25a.PNG)">
+![capturar](https://user-images.githubusercontent.com/13967326/28651663-8671bc28-7259-11e7-9309-7caeea0ef25a.PNG)
 
 ## Connection
   This project uses data from [Riot Api](https://developer.riotgames.com/).
