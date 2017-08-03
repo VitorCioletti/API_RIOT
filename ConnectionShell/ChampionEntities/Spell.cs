@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace riotAPI_teste
 {
-    class Spell
+    public class Spell
     {
         [JsonProperty("name")]
         public string name { get; set; }

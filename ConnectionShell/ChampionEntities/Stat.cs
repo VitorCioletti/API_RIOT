@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Stat
+    public class Stat
     {
         [JsonProperty("armor")]
         public double armor { get; set; }

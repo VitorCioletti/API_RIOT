@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Image
+    public class Image
     {
         [JsonProperty("full")]
         public string full { get; set; }

@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Block
+  public  class Block
     {
         [JsonProperty("type")]
         public string type { get; set; }

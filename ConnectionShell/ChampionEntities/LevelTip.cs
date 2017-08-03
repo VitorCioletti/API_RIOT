@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class LevelTip
+    public class LevelTip
     {
         [JsonProperty("label")]
         public string[] label { get; set; }

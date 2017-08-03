@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 namespace riotAPI_teste
 {
-    class ChampionWrapper
+   public class ChampionWrapper
     {
         [JsonProperty("data")]
         public Dictionary<string, Champion> Data { get; set; }

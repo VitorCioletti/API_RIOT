@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Item
+    public class Item
     {
         [JsonProperty("id")]
         public int id { get; set; }

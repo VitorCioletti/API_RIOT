@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Skin
+    public class Skin
     {
         [JsonProperty("id")]
         public int id { get; set; }

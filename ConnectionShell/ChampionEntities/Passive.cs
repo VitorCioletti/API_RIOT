@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Passive
+    public class Passive
     {
         [JsonProperty("name")]
         public string name { get; set; }

@@ -7,7 +7,7 @@ using System.Net;
 
 namespace riotAPI_teste
 {
-    class Server
+    public class Server
     {
         private static Server server;
 
@@ -25,6 +25,7 @@ namespace riotAPI_teste
         {
             RestClient client = new RestClient(new Uri(ConfigurationManager.AppSettings["apiUrl"], UriKind.RelativeOrAbsolute));
             RestRequest request = new RestRequest(Method.GET);
+            request.AddParameter("api_key",ConfigurationManager.AppSettings["apiKey"]);
             var response = client.Execute(request);
             if(response.StatusCode == HttpStatusCode.OK){
                 ChampionWrapper championsList = JsonConvert.DeserializeObject<ChampionWrapper>(response.Content);

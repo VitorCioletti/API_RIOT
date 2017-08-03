@@ -62,8 +62,6 @@
     <Compile Include="ChampionEntities\Spell.cs" />
     <Compile Include="ChampionEntities\Stat.cs" />
     <Compile Include="ChampionEntities\Vars.cs" />
-    <Compile Include="Update\DownloadImages.cs" />
-    <Compile Include="Update\ImagesUri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ChampionEntities\Match.cs" />

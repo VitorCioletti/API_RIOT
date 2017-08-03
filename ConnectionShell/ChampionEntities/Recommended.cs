@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Recommended
+    public class Recommended
     {
         [JsonProperty("champion")]
         public string champion { get; set; }

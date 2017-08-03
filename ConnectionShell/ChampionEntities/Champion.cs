@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace riotAPI_teste
 {
-    class Champion
+   public  class Champion
     {
         [JsonProperty("id")]
         public int id { get; set; }

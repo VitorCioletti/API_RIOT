@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Match
+    public class Match
     {
         [JsonProperty("gameId")]
         public string gameId { get; set; }
@@ -36,7 +36,7 @@ namespace riotAPI_teste
         public Stats stats = new Stats();
         public Match() { }
     }
-    class Stats
+    public class Stats
     {
         [JsonProperty("level")]
         public int level { get; set; }
@@ -117,7 +117,7 @@ namespace riotAPI_teste
         [JsonProperty("visionWardsBought")]
         public int visionWardsBought { get; set; }
     }
-    class fellowPlayers{
+    public class fellowPlayers{
         [JsonProperty("summonerId")]
         public int summonerId { get; set; }
         [JsonProperty("championId")]

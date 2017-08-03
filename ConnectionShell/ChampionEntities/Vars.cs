@@ -2,7 +2,7 @@
 
 namespace riotAPI_teste
 {
-    class Vars
+    public class Vars
     {
         [JsonProperty("key")]
         public string Key { get; set; }
