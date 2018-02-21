@@ -1,8 +1,6 @@
 # What-a-Champ
 Development of a single user interface that shows all League of Legends champions informations. 
 
-**Feel free to use on your own project**
-
 ## User Interface
   There are 2 main windows. The first one allows users to chose a champion and the other one shows the champions stats.
   
