@@ -4,13 +4,9 @@ namespace riotAPI_teste
 {
    public class Info
     {
-        [JsonProperty("attack")]
         public int attack { get; set; }
-        [JsonProperty("defense")]
         public int defense { get; set; }
-        [JsonProperty("magic")]
         public int magic { get; set; }
-        [JsonProperty("difficulty")]
         public int difficulty { get; set; }
     }
 }

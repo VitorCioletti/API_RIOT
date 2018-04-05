@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace riotAPI_teste
 {
   public  class Block
     {
-        [JsonProperty("type")]
         public string type { get; set; }
-        [JsonProperty("recMath")]
+
         public bool recMath { get; set; }
-        [JsonProperty("items")]
-        public Item[] items { get; set; }
+
+        public List<Item> items { get; set; }
     }
 }

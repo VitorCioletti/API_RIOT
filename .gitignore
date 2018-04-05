@@ -4,11 +4,9 @@ packages/
 TestResults/
 *.exe
 *.pdb
-*.config
 *.suo
 *.nupkg
 *.vs
 *.project
 *.lock
 *.json
-RiotKey.cs
