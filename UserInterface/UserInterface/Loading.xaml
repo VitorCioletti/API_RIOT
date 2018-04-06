@@ -1,0 +1,15 @@
+﻿<Window x:Class="UserInterface.Loading"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      mc:Ignorable="d"
+      Width="400" Height="400"
+      Title="Loading" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="WhiteSmoke" Topmost="True">
+        <Grid>
+        <Image gif:ImageBehavior.AnimatedSource="C:\Users\CiolettiVitor\Desktop\Content\gif\loading3.gif"/>
+            <Label Content="What a Champ" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="30" Height="50" VerticalAlignment="Top"/>
+            <Label Content="Loading..." HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="25" Height="50" Margin="0,0,0,20" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
