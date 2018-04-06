@@ -1,7 +1,5 @@
-﻿namespace UserInterface
+﻿namespace WhatAChamp
 {
-	using riotAPI_teste;
-	using riotAPI_teste.APIConnection;
 	using System.Windows.Controls;
 
 	public partial class ChampionList : UserControl
@@ -16,6 +14,6 @@
 			ChampionsList.ItemsSource = ChampionReader.GetList();
 
 		private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
-			WhatAChamp.LoadSelectedChampion((Champion)((System.Windows.Controls.Image)sender).DataContext);
+			WhatAChampUI.LoadSelectedChampion((Champion)((System.Windows.Controls.Image)sender).DataContext);
 	}
 }

@@ -1,4 +1,4 @@
-﻿namespace riotAPI_teste.APIConnection
+﻿namespace WhatAChamp
 {
 	using System.Collections.Generic;
 	using System.IO;

@@ -1,4 +1,4 @@
-﻿namespace UserInterface
+﻿namespace WhatAChamp
 {
 	using System.Windows;
 
@@ -10,7 +10,7 @@
 
 			Show();
 
-			new WhatAChamp().Show();
+			new WhatAChampUI().Show();
 
 			Close();
 		}

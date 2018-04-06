@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace riotAPI_teste
+namespace WhatAChamp
 {
     public class Spell
     {

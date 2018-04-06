@@ -79,7 +79,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserInterface\WhatAChamp.xaml">
+    <Page Include="UserInterface\WhatAChampUI.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -110,8 +110,8 @@
     <Compile Include="UserInterface\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\WhatAChamp.xaml.cs">
-      <DependentUpon>WhatAChamp.xaml</DependentUpon>
+    <Compile Include="UserInterface\WhatAChampUI.xaml.cs">
+      <DependentUpon>WhatAChampUI.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

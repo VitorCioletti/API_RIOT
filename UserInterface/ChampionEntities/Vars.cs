@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace riotAPI_teste
+namespace WhatAChamp
 {
     public class Vars
     {

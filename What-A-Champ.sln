@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{BE9C4D86-BBE5-4412-8F63-992F38FA020B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatAChamp", "UserInterface\WhatAChamp.csproj", "{BE9C4D86-BBE5-4412-8F63-992F38FA020B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

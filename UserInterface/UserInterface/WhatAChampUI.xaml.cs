@@ -1,11 +1,10 @@
-﻿namespace UserInterface
+﻿namespace WhatAChamp
 {
-	using riotAPI_teste;
 	using System.Windows;
 
-	public partial class WhatAChamp : Window
+	public partial class WhatAChampUI : Window
     {
-        public WhatAChamp()
+        public WhatAChampUI()
         {
             InitializeComponent();
         }
@@ -17,7 +16,7 @@
 
 		public static void LoadSelectedChampion(Champion selectedChampion)
 		{
-			var existingWindow = Window.GetWindow(Application.Current.Windows[0]) as WhatAChamp;
+			var existingWindow = Window.GetWindow(Application.Current.Windows[0]) as WhatAChampUI;
 
 			ChampionInfo.LoadSelectedChampion(selectedChampion, existingWindow);
 

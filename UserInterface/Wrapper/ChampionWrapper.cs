@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-namespace riotAPI_teste
+namespace WhatAChamp
 {
    public class ChampionWrapper
     {
