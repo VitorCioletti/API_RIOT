@@ -29,14 +29,32 @@
 					<!--Champion informations and spells-->
 					<StackPanel Grid.Column="1">
 						<!--Champion info-->
+						<Label Content="Stats" FontSize="25" FontWeight="DemiBold"/>
 						<Label Content="Attack" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 						<ProgressBar x:Name="ChampionAttack" Margin="10,0,0,0"  Minimum="0" Maximum="10"/>
+
 						<Label Content="Defense" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 						<ProgressBar x:Name="ChampionDefense" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+
 						<Label Content="Magic" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 						<ProgressBar x:Name="ChampionMagic" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+
 						<Label Content="Difficulty" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 						<ProgressBar x:Name="ChampionDifficulty" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+
+
+						<Label Content="Attack Speed" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<ProgressBar x:Name="ChampionAttackSpeed" Maximum="4" Margin="10, 0, 0, 0" />
+
+						<Label Content="Hp" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<ProgressBar x:Name="ChampionHp" Maximum="2000" Margin="10, 0, 0, 0" />
+
+						<Label Content="Mana Points" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<ProgressBar x:Name="ChampionMP" Maximum="2000" Margin="10, 0, 0, 0" />
+
+						<Label Content="Move Speed" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<ProgressBar x:Name="ChampionMS" MaxHeight="1000" Margin="10,0,0,0" />
+
 						<Label x:Name="ChampionTags" Content="Tags:" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
 						<!--Champion spells-->
 						<Grid>
@@ -131,53 +149,38 @@
 								<ColumnDefinition Width="*"/>
 							</Grid.ColumnDefinitions>
 							<Label Grid.Column="0" Content="Tips:" FontSize="16" Margin="0,10,0,0" />
-							<TextBlock x:Name="ChampionFriendlyTip" Grid.Column="1" Text="Friendly" ToolTip="Jax benefits greatly from items that have both Ability Power and Attack Damage such as Guinsoo's Rageblade and Hextech Gunblade." TextAlignment="Center" Background="PaleGreen" VerticalAlignment="Center" FontSize="13"/>
-							<TextBlock x:Name="ChampionEnemyTip" Grid.Column="2" Text="Enemy" TextAlignment="Center" ToolTip="Jax can Leap Strike to friendly units, including wards. You can use them to plan your escape" Background="PaleVioletRed" VerticalAlignment="Center" FontSize="13"/>
+							<TextBlock x:Name="ChampionFriendlyTip" Grid.Column="1" Text="Friendly" TextAlignment="Center" Background="PaleGreen" VerticalAlignment="Center" FontSize="13"/>
+							<TextBlock x:Name="ChampionEnemyTip" Grid.Column="2" Text="Enemy" TextAlignment="Center" Background="PaleVioletRed" VerticalAlignment="Center" FontSize="13"/>
 						</Grid>
-						<Image Source="Images\images\button3d.png"  Stretch="Fill" Height="100" Width="290" Margin="0,90,0,0" ToolTip="See the 3D model of this champion"/>
 					</StackPanel>
 				</Grid>
 			</StackPanel>
 			<!--Right Panel (Champion lore and stats)-->
-			<StackPanel Grid.Column="1" Margin="10,35,20,0">
+			<StackPanel Grid.Column="1" Margin="10,117,20,0">
 				<!--Lore-->
-				<Label Content="Lore" FontSize="25"/>
+				<Label Content="Lore" FontSize="25" FontWeight="DemiBold"/>
 				<Label FontSize="13">
 					<AccessText x:Name="ChampionLore" Text="{Binding Path=lore}" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
 				</Label>
 				<!--Stats-->
 				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<Grid Grid.Column="0">
-						<Label Content="Stats" FontSize="25"/>
-						<ProgressBar Margin="0,-100,0,0" />
-						<ProgressBar Margin="0,-30,0,0" />
-						<ProgressBar Margin="0,40,0,0" />
-						<ProgressBar Margin="0,110,0,0" />
-						<ProgressBar Margin="0,180,0,0" />
-					</Grid>
-					<Grid Grid.Column="1">
-						<Label Content="Check this champ at:" HorizontalContentAlignment="Center" FontSize="23"/>
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-							</Grid.ColumnDefinitions>
-							<StackPanel Grid.Column="0">
-								<Image Source="Images\lol-oficial.png" ToolTip="" Width="90" Height="80" Margin="0,40,0,0"/>
-								<Image Source="Images\lol-wiki.png" ToolTip="" Width="90" Height="90" Margin="0,0,0,0"/>
-							</StackPanel>
-							<StackPanel Grid.Column="1">
-								<Image Source="Images\lolking.png" Width="90" ToolTip="" Height="90" Margin="0,23,0,0"/>
-								<Image Source="Images\lol-cgg.png" Width="90" ToolTip="" Height="90" Margin="0,0,0,0"/>
-							</StackPanel>
-
-						</Grid>
+					<Label Content="Check this champ at:" FontWeight="DemiBold" HorizontalContentAlignment="Left" FontSize="23" Margin="0, 25, 0, 0"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<StackPanel Grid.Column="0">
+							<Image Source="Sites/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="200" Height="80" Margin="0,60,0,0"/>
+							<Image Source="Sites/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="250" Height="90" Margin="0,0,0,0"/>
+						</StackPanel>
+						<StackPanel Grid.Column="1">
+							<Image Source="Sites/lolking.png" x:Name="LolKing" Width="200" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="100" Margin="0,50,0,0"/>
+							<Image Source="Sites/lol-cgg.png" x:Name="LolCGG" Width="250" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="90" Margin="0,0,0,0"/>
+						</StackPanel>
 					</Grid>
 				</Grid>
+				<Image Source="Sites/3DChamp2.jpg"  Height="90" ToolTip="Show 3D character model" Stretch="UniformToFill" Margin="10,24,0,0"/>
 			</StackPanel>
 		</Grid>
 	</StackPanel>

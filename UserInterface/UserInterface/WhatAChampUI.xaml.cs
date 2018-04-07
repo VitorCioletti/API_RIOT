@@ -9,14 +9,14 @@
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click(object sender, RoutedEventArgs e) =>
             Close();
-        }
 
 		public static void LoadSelectedChampion(Champion selectedChampion)
 		{
 			var existingWindow = Window.GetWindow(Application.Current.Windows[0]) as WhatAChampUI;
+
+			existingWindow.GoBack.Visibility = Visibility.Visible;
 
 			ChampionInfo.LoadSelectedChampion(selectedChampion, existingWindow);
 
@@ -26,6 +26,16 @@
 
 		private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
+			GoBack.Visibility = Visibility.Collapsed;
+
+			ChampInfo.Visibility = Visibility.Collapsed;
+			ChampList.Visibility = Visibility.Visible;
+		}
+
+		private void GoBack_Click(object sender, RoutedEventArgs e)
+		{
+			GoBack.Visibility = Visibility.Hidden;
+
 			ChampInfo.Visibility = Visibility.Collapsed;
 			ChampList.Visibility = Visibility.Visible;
 		}

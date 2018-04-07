@@ -1,5 +1,6 @@
 ﻿namespace WhatAChamp
 {
+	using System;
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
@@ -14,14 +15,16 @@
 		{
 			return champions.Data.Where(c =>
 			{
-				c.Value.image.iconPath = $@"Images\Champions\Square\{c.Value.name}Square.png";
-				c.Value.image.originalLoadingPath = $@"Images\Champions\MainArt\{c.Value.name}_OriginalLoading.jpg";
+				var basePath = AppDomain.CurrentDomain.BaseDirectory;
 
-				c.Value.image.passivePath = $@"\UserInterface\Images\Champions\Skills{c.Value.name}_P.png";
-				c.Value.image.QPath = $@"\UserInterface\Images\Champions\Skills{c.Value.name}_P.png";
-				c.Value.image.WPath = $@"\UserInterface\Images\Champions\Skills{c.Value.name}_W.png";
-				c.Value.image.EPath = $@"\UserInterface\Images\Champions\Skills{c.Value.name}_E.png";
-				c.Value.image.RPath = $@"\UserInterface\Images\Champions\Skills{c.Value.name}_R.png";
+				c.Value.image.iconPath = $@"{basePath}\Images\Champions\Square\{c.Value.name}Square.png";
+				c.Value.image.originalLoadingPath = $@"{basePath}\Images\Champions\MainArt\{c.Value.name}_OriginalLoading.jpg";
+
+				c.Value.image.passivePath = $@"{basePath}\Images\Champions\Skills\{c.Value.name}_P.png";
+				c.Value.image.QPath = $@"{basePath}Images\Champions\Skills\{c.Value.name}_Q.png";
+				c.Value.image.WPath = $@"{basePath}Images\Champions\Skills\{c.Value.name}_W.png";
+				c.Value.image.EPath = $@"{basePath}Images\Champions\Skills\{c.Value.name}_E.png";
+				c.Value.image.RPath = $@"{basePath}Images\Champions\Skills\{c.Value.name}_R.png";
 
 				return true;
 			}).Select(c => c.Value).OrderBy(c => c.name).ToList();

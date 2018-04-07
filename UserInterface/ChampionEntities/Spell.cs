@@ -15,7 +15,7 @@ namespace WhatAChamp
         public Image image { get; set; }
         public string resource { get; set; }
         public int maxRank { get; set; }
-        public List<int> cost { get; set; }
+        public List<string> cost { get; set; }
         public string costType { get; set; }
         public string costBurn { get; set; }
         public List<string> coolDown { get; set; }
