@@ -5,16 +5,23 @@
 	using System.IO;
 	using System.Linq;
 	using Newtonsoft.Json;
+	using UserInterface.UserInterface.Resources;
 
 	public static class ChampionReader
 	{
 		public static IEnumerable<Champion> LoadedChampions;
 
-		public static IEnumerable<Champion> GetList() =>
-			GetChampionsInRepository(JsonConvert.DeserializeObject<ChampionWrapper>(new StreamReader("pack://application:,,,/Sites/Json/Characters.txt").ReadToEnd()));
-
-		private static IEnumerable<Champion> GetChampionsInRepository(ChampionWrapper champions)
+		public static IEnumerable<Champion> GetList()
 		{
+			var jsonFromTextFile = new StreamReader(ChampionsJson.Characters).ReadToEnd();
+			var championsList = JsonConvert.DeserializeObject<ChampionWrapper>(jsonFromTextFile);
+
+			return ApplyImagesPath(championsList);
+		}
+		private static IEnumerable<Champion> ApplyImagesPath(ChampionWrapper champions)
+		{
+			var value = Skills.ResourceManager.GetObject("Aatrox_E.png");
+
 			LoadedChampions = champions.Data.Where(c =>
 			{
 				var basePath = @"pack://application:,,,/Sites/Images/Champions";

@@ -8,7 +8,7 @@
       Width="400" Height="400"
       Title="Loading" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Background="WhiteSmoke" Topmost="True">
         <Grid>
-        <Image gif:ImageBehavior.AnimatedSource="Sites/gif/loading3.gif"/>
+        <Image gif:ImageBehavior.AnimatedSource="Resources/gif/loading3.gif"/>
             <Label Content="What a Champ" HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="30" Height="50" VerticalAlignment="Top"/>
             <Label Content="Loading..." HorizontalAlignment="Center" Foreground="WhiteSmoke" FontWeight="ExtraLight" FontSize="25" Height="50" Margin="0,0,0,20" VerticalAlignment="Bottom"/>
     </Grid>

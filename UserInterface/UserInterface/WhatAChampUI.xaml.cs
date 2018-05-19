@@ -34,6 +34,8 @@
 			{
 				"Mage", "Support", "Tank", "Assassin", "Fighter", "All"
 			}.OrderBy(e => e);
+
+			cmb_typeClasses.SelectedIndex = 0;
 		}
 
 		private async void FilterChampionsByType(string selectedType) =>
