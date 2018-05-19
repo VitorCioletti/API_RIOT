@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Width="Auto" Height="Auto">
+    <Grid Width="Auto" Height="500">
 		<DockPanel>	
 			<ScrollViewer IsEnabled="True">
 				<ItemsControl x:Name="ChampionsList" Grid.Column="0">
@@ -16,7 +16,9 @@
 					</ItemsControl.ItemsPanel>
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
-							<Image MouseLeftButtonDown="Image_MouseLeftButtonDown" ToolTip="{Binding Path=name}" Margin="5" Height="80" Width="80" Source="{Binding Path=image.iconPath}"/>
+							<Border BorderThickness="2" BorderBrush="Transparent" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave">
+								<Image MouseLeftButtonDown="Image_MouseLeftButtonDown"  ToolTip="{Binding Path=name}" Margin="5" Height="80" Width="80" Source="{Binding Path=image.iconPath}"/>
+							</Border>
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>
 				</ItemsControl>

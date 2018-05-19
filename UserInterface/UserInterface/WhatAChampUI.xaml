@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1150" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
+	<Grid x:Name="PanelLoading">
         <StackPanel>
             <!--Menu-->
 			<Menu Background="#333" Height="70" VerticalAlignment="Top">
@@ -25,8 +25,12 @@
 				<Button x:Name="Exit" Height="52" Background="Transparent" BorderThickness="0" ToolTip="Exit" Content="X" FontWeight="Light" FontSize="22" Click="Button_Click"/>
 			</Menu>
 
+			<StackPanel Orientation="Horizontal">
+				<Label x:Name="lbl_selectChamp" Content="Select a Champ:" FontSize="40" Margin="30,20,0,0"/>
+				<ComboBox x:Name="cmb_typeClasses" Height="50" Width="160" FontSize="22" BorderBrush="Black" Margin="630,20,0,0" SelectionChanged="cmb_typeClasses_SelectionChanged"/>
+			</StackPanel>
 			<UserControl:ChampionInfo x:Name="ChampInfo" Visibility="Collapsed"/>
-			<UserControl:ChampionList x:Name="ChampList" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,80,0,0" Visibility="Visible"/>
+			<UserControl:ChampionList x:Name="ChampList" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,40,0,0" Visibility="Visible"/>
 
 		</StackPanel>
     </Grid>
