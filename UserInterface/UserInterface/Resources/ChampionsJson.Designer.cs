@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserInterface.UserInterface.Resources {
+namespace WhatAChamp.UserInterface.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace UserInterface.UserInterface.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UserInterface.UserInterface.Resources.ChampionsJson", typeof(ChampionsJson).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WhatAChamp.UserInterface.Resources.ChampionsJson", typeof(ChampionsJson).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

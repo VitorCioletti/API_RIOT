@@ -11,7 +11,7 @@
 				<ItemsControl x:Name="ChampionsList" Grid.Column="0">
 					<ItemsControl.ItemsPanel>
 						<ItemsPanelTemplate>
-							<WrapPanel Orientation="Horizontal" Height="535" ScrollViewer.CanContentScroll="True"/>
+							<WrapPanel Orientation="Horizontal" Height="550" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 						</ItemsPanelTemplate>
 					</ItemsControl.ItemsPanel>
 					<ItemsControl.ItemTemplate>

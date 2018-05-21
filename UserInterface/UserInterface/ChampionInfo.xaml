@@ -30,29 +30,52 @@
 					<StackPanel Grid.Column="1">
 						<!--Champion info-->
 						<Label Content="Stats" FontSize="25" FontWeight="DemiBold"/>
-						<Label Content="Attack" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Attack: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="AttackLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionAttack" Margin="10,0,0,0"  Minimum="0" Maximum="10"/>
-
-						<Label Content="Defense" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Defense: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="DefenseLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionDefense" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-						<Label Content="Magic" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Magic: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="MagicLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionMagic" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-						<Label Content="Difficulty" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Difficulty: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="DifficultyLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionDifficulty" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-
-						<Label Content="Attack Speed" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Attack Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="AttackSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionAttackSpeed" Maximum="4" Margin="10, 0, 0, 0" />
 
-						<Label Content="Hp" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Hp: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="HpLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionHp" Maximum="2000" Margin="10, 0, 0, 0" />
 
-						<Label Content="Mana Points" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Mana Points: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="MpLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionMP" Maximum="2000" Margin="10, 0, 0, 0" />
 
-						<Label Content="Move Speed" FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="Move Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+							<Label x:Name="MoveSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
+						</StackPanel>
 						<ProgressBar x:Name="ChampionMS" MaxHeight="1000" Margin="10,0,0,0" />
 
 						<Label x:Name="ChampionTags" Content="Tags:" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
@@ -171,16 +194,16 @@
 							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
 						<StackPanel Grid.Column="0">
-							<Image Source="Sites/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="200" Height="80" Margin="0,60,0,0"/>
-							<Image Source="Sites/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="250" Height="90" Margin="0,0,0,0"/>
+							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="200" Height="80" Margin="0,60,0,0"/>
+							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="250" Height="90" Margin="0,0,0,0"/>
 						</StackPanel>
 						<StackPanel Grid.Column="1">
-							<Image Source="Sites/lolking.png" x:Name="LolKing" Width="200" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="100" Margin="0,50,0,0"/>
-							<Image Source="Sites/lol-cgg.png" x:Name="LolCGG" Width="250" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="90" Margin="0,0,0,0"/>
+							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="200" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="100" Margin="0,50,0,0"/>
+							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="250" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="90" Margin="0,0,0,0"/>
 						</StackPanel>
 					</Grid>
 				</Grid>
-				<Image Source="Sites/3DChamp2.jpg"  Height="90" ToolTip="Show 3D character model" Stretch="UniformToFill" Margin="10,24,0,0"/>
+				<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/button3d.png"  Height="85" ToolTip="Show 3D character model" Stretch="UniformToFill" Margin="10,20,0.2,0"/>
 			</StackPanel>
 		</Grid>
 	</StackPanel>

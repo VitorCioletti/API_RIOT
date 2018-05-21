@@ -1,17 +1,13 @@
-﻿using System.Windows;
-
-namespace WhatAChamp
+﻿namespace WhatAChamp
 {
-    /// <summary>
-    /// Interação lógica para App.xaml
-    /// </summary>
+	using System.Windows;
+	
     public partial class App : Application
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Loading loadingWindow = new Loading();
             var app = new Application();
-            app.Run(loadingWindow);
+            app.Run();
         }
     }
 }
