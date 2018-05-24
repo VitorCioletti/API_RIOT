@@ -58,7 +58,7 @@
 							<Label Content="Attack Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 							<Label x:Name="AttackSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
 						</StackPanel>
-						<ProgressBar x:Name="ChampionAttackSpeed" Maximum="4" Margin="10, 0, 0, 0" />
+						<ProgressBar x:Name="ChampionAttackSpeed" Maximum="500" Margin="10, 0, 0, 0" />
 
 						<StackPanel Orientation="Horizontal">
 							<Label Content="Hp: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
@@ -70,13 +70,13 @@
 							<Label Content="Mana Points: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 							<Label x:Name="MpLabel" Content="00/00" Margin="0,8,0,0"/>
 						</StackPanel>
-						<ProgressBar x:Name="ChampionMP" Maximum="2000" Margin="10, 0, 0, 0" />
+						<ProgressBar x:Name="ChampionMP" Maximum="700" Margin="10, 0, 0, 0" />
 
 						<StackPanel Orientation="Horizontal">
 							<Label Content="Move Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
 							<Label x:Name="MoveSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
 						</StackPanel>
-						<ProgressBar x:Name="ChampionMS" MaxHeight="1000" Margin="10,0,0,0" />
+						<ProgressBar x:Name="ChampionMS" Maximum="600" MaxHeight="1000" Margin="10,0,0,0" />
 
 						<Label x:Name="ChampionTags" Content="Tags:" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
 						<!--Champion spells-->

@@ -55,14 +55,31 @@
 			champInfoWindow.RSkillEffect.Text += selectedChampion.spells[3].effect[0];
 			champInfoWindow.RSkillRange.Text += selectedChampion.spells[3].range[0];
 
-			champInfoWindow.ChampionAttack.Value = selectedChampion.info["attack"];
-			champInfoWindow.ChampionDefense.Value = selectedChampion.info["defense"];
-			champInfoWindow.ChampionMagic.Value = selectedChampion.info["magic"];
-			champInfoWindow.ChampionDifficulty.Value = selectedChampion.info["difficulty"];
-			champInfoWindow.ChampionAttackSpeed.Value = selectedChampion.stats.moveSpeed;
-			champInfoWindow.ChampionHp.Value = selectedChampion.stats.hp;
-			champInfoWindow.ChampionMP.Value = selectedChampion.stats.mp;
-			champInfoWindow.ChampionMS.Value = selectedChampion.stats.moveSpeed;
+			var attack = selectedChampion.info["attack"];
+			var defense = selectedChampion.info["defense"];
+			var magic = selectedChampion.info["defense"];
+			var difficulty = selectedChampion.info["difficulty"];
+			var moveSpeed = selectedChampion.stats.moveSpeed;
+			var hp = selectedChampion.stats.hp;
+			var mp = selectedChampion.stats.mp;
+
+			champInfoWindow.ChampionAttack.Value = attack;
+			champInfoWindow.ChampionDefense.Value = defense;
+			champInfoWindow.ChampionMagic.Value = magic;
+			champInfoWindow.ChampionDifficulty.Value = difficulty;
+			champInfoWindow.ChampionAttackSpeed.Value = moveSpeed;
+			champInfoWindow.ChampionHp.Value = hp;
+			champInfoWindow.ChampionMP.Value = mp;
+			champInfoWindow.ChampionMS.Value = moveSpeed;
+
+			champInfoWindow.AttackLabel.Content = $"{attack}/{champInfoWindow.ChampionAttack.Maximum}";
+			champInfoWindow.DefenseLabel.Content = $"{defense}/{champInfoWindow.ChampionDefense.Maximum}";
+			champInfoWindow.MagicLabel.Content = $"{magic}/{champInfoWindow.ChampionMagic.Maximum}";
+			champInfoWindow.DifficultyLabel.Content = $"{difficulty}/{champInfoWindow.ChampionDifficulty.Maximum}";
+			champInfoWindow.AttackSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionAttackSpeed.Maximum}";
+			champInfoWindow.HpLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionHp.Maximum}";
+			champInfoWindow.MpLabel.Content = $"{mp}/{champInfoWindow.ChampionMP.Maximum}";
+			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
 		}
 
 		private void OpenBrowser(string path) =>
