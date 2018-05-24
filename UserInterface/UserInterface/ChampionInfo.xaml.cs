@@ -80,6 +80,9 @@
 			champInfoWindow.HpLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionHp.Maximum}";
 			champInfoWindow.MpLabel.Content = $"{mp}/{champInfoWindow.ChampionMP.Maximum}";
 			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
+
+
+			CounterScrapper.GetWeakAgainstOf(selectedChampion.name);
 		}
 
 		private void OpenBrowser(string path) =>
