@@ -203,9 +203,9 @@
                                 <Grid>
                                     <TabControl>
                                         <TabItem Header="Weak Against">
-                                            <UserControl:Counters x:Name="ListWeakAgainst"/>
+                                            <UserControl:Counters x:Name="ListWeakAgainst" Loaded="ListWeakAgainst_Loaded"/>
                                         </TabItem>
-                                        <TabItem Header="Strong Against" >
+                                        <TabItem Header="Strong Against">
                                             <UserControl:Counters  x:Name="ListStrongAgainst"/>
                                         </TabItem>
                                         <TabItem Header="Goes Well With" >
