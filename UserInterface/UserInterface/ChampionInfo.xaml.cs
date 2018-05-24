@@ -1,8 +1,10 @@
 ﻿namespace WhatAChamp
 {
-	using System.Windows.Controls;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows.Controls;
 
-	public partial class ChampionInfo : UserControl
+    public partial class ChampionInfo : UserControl
 	{
 		public ChampionInfo()
 		{
@@ -80,10 +82,22 @@
 			champInfoWindow.HpLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionHp.Maximum}";
 			champInfoWindow.MpLabel.Content = $"{mp}/{champInfoWindow.ChampionMP.Maximum}";
 			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
-
-
-			//CounterScrapper.GetWeakAgainstOf(selectedChampion.name);
 		}
+
+        private void FillWeakAgainstOf(string champion) =>
+            ListWeakAgainst.DataContext = GetChampionFullInformations(CounterScrapper.GetWeakAgainstOf(champion));
+
+        private void FillStrongAgainstOf(string champion) =>
+            ListStrongAgainst.DataContext = GetChampionFullInformations(CounterScrapper.GetStrongAgainstOf(champion));
+
+        private void FillEvenWith(string champion) =>
+            ListEvenWith.DataContext = GetChampionFullInformations(CounterScrapper.GetEvenWith(champion));
+
+        private void FillGoodWith(string champion) =>
+           ListWellWith.DataContext = GetChampionFullInformations(CounterScrapper.GetWellWith(champion));
+
+        private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>
+            ChampionList.List.Where(c => champions.Contains(c.name));
 
 		private void OpenBrowser(string path) =>
 			System.Diagnostics.Process.Start(path);

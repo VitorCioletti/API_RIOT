@@ -1,18 +1,24 @@
 ﻿namespace WhatAChamp
 {
-	using System.Windows.Controls;
-	using System.Windows.Media;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
+    using System.Windows.Media;
 
-	public partial class ChampionList : UserControl
+    public partial class ChampionList : UserControl
 	{
+        public static IEnumerable<Champion> List;
+
 		public ChampionList()
 		{
 			InitializeComponent();
 			LoadChampions();
 		}
 
-		private void LoadChampions() =>
-			ChampionsList.ItemsSource = ChampionReader.GetList();
+		private void LoadChampions()
+        {
+            List = ChampionReader.GetList();
+            ChampionsList.ItemsSource = List;
+        }
 
 		private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			WhatAChampUI.LoadSelectedChampion((Champion)((System.Windows.Controls.Image)sender).DataContext);
