@@ -82,7 +82,7 @@
 			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
 
 
-			CounterScrapper.GetWeakAgainstOf(selectedChampion.name);
+			//CounterScrapper.GetWeakAgainstOf(selectedChampion.name);
 		}
 
 		private void OpenBrowser(string path) =>

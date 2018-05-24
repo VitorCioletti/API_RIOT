@@ -2,209 +2,228 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:UserControl="clr-namespace:WhatAChamp"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d">
 
-	<StackPanel>
-		<Grid x:Name="ChampInfo">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
-			<!--Left Panel-->
-			<StackPanel Grid.Column="0">
-				<Label x:Name="ChampionName" Content="{Binding Path=name}" FontSize="29" Margin="20,30,0,0"/>
-				<Label x:Name="ChampionTitle" Content="{Binding Path=title}" FontSize="20" Margin="20,0,0,0"/>
-				<!--Champion image and informations-->
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<!--Image and skins-->
-					<StackPanel Grid.Column="0">
-						<!--Champion image-->
-						<Image x:Name="ChampionMainArt"  Source="{Binding Path=image.originalLoadingPath}" Width="300" HorizontalAlignment="Left" Margin="20,0,0,0" Height="490" Stretch="Uniform"/>
-					</StackPanel>
-					<!--Champion informations and spells-->
-					<StackPanel Grid.Column="1">
-						<!--Champion info-->
-						<Label Content="Stats" FontSize="25" FontWeight="DemiBold"/>
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Attack: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="AttackLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionAttack" Margin="10,0,0,0"  Minimum="0" Maximum="10"/>
-						
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Defense: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="DefenseLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionDefense" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+    <StackPanel>
+        <Grid x:Name="ChampInfo">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--Left Panel-->
+            <StackPanel Grid.Column="0">
+                <Label x:Name="ChampionName" Content="{Binding Path=name}" FontSize="29" Margin="20,30,0,0"/>
+                <Label x:Name="ChampionTitle" Content="{Binding Path=title}" FontSize="20" Margin="20,0,0,0"/>
+                <!--Champion image and informations-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Image and skins-->
+                    <StackPanel Grid.Column="0">
+                        <!--Champion image-->
+                        <Image x:Name="ChampionMainArt"  Source="{Binding Path=image.originalLoadingPath}" Width="300" HorizontalAlignment="Left" Margin="20,0,0,0" Height="490" Stretch="Uniform"/>
+                    </StackPanel>
+                    <!--Champion informations and spells-->
+                    <StackPanel Grid.Column="1">
+                        <!--Champion info-->
+                        <Label Content="Stats" FontSize="25" FontWeight="DemiBold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Attack: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="AttackLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionAttack" Margin="10,0,0,0"  Minimum="0" Maximum="10"/>
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Magic: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="MagicLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionMagic" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Defense: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="DefenseLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionDefense" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Difficulty: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="DifficultyLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionDifficulty" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Magic: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="MagicLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionMagic" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Attack Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="AttackSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionAttackSpeed" Maximum="500" Margin="10, 0, 0, 0" />
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Difficulty: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="DifficultyLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionDifficulty" Margin="10,0,0,0" Minimum="0" Maximum="10"/>
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Hp: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="HpLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionHp" Maximum="2000" Margin="10, 0, 0, 0" />
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Attack Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="AttackSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionAttackSpeed" Maximum="500" Margin="10, 0, 0, 0" />
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Mana Points: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="MpLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionMP" Maximum="700" Margin="10, 0, 0, 0" />
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Hp: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="HpLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionHp" Maximum="2000" Margin="10, 0, 0, 0" />
 
-						<StackPanel Orientation="Horizontal">
-							<Label Content="Move Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-							<Label x:Name="MoveSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
-						</StackPanel>
-						<ProgressBar x:Name="ChampionMS" Maximum="600" MaxHeight="1000" Margin="10,0,0,0" />
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Mana Points: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="MpLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionMP" Maximum="700" Margin="10, 0, 0, 0" />
 
-						<Label x:Name="ChampionTags" Content="Tags:" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
-						<!--Champion spells-->
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-							</Grid.ColumnDefinitions>
-							<!--Passive-->
-							<Image x:Name="ChampionPassive"  Grid.Column="0" Source="{Binding Path=image.passivePath}" Margin="5,30,0,0" Width="55" Height="40">
-								<Image.ToolTip>
-									<StackPanel Width="150">
-										<TextBlock x:Name="PassiveSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-										<Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
-										<TextBlock x:Name="PassiveSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify">
-										</TextBlock>
-									</StackPanel>
-								</Image.ToolTip>
-							</Image>
-							<!--Spell 1-->
-							<Image  x:Name="ChampionSkillQ" Grid.Column="1" Source="{Binding Path=image.QPath}" Margin="5,15,0,0" Width="55">
-								<Image.ToolTip>
-									<StackPanel Width="230">
-										<TextBlock x:Name="QSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-										<TextBlock x:Name="QSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
-										<Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
-										<StackPanel>
-											<TextBlock x:Name="QSkillCost" Text="Cost:"/>
-											<TextBlock x:Name="QSkillCooldown" Text="Cooldown:"/>
-											<TextBlock x:Name="QSkillRange" Text="Range:"/>
-											<TextBlock x:Name="QSkillEffect" Text="Effect:"/>
-										</StackPanel>
-									</StackPanel>
-								</Image.ToolTip>
-							</Image>
-							<!--Spell 2-->
-							<Image x:Name="ChampionSkillW"  Grid.Column="2" Source="{Binding Path=image.WPath}" Margin="5,15,0,0" Width="55" >
-								<Image.ToolTip>
-									<StackPanel Width="230">
-										<TextBlock x:Name="WSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-										<TextBlock x:Name="WSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
-										<Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
-										<StackPanel>
-											<TextBlock x:Name="WSkillCost" Text="Cost:"/>
-											<TextBlock x:Name="WSkillCooldown" Text="Cooldown:"/>
-											<TextBlock x:Name="WSkillRange" Text="Range:"/>
-											<TextBlock x:Name="WSkillEffect" Text="Effect:"/>
-										</StackPanel>
-									</StackPanel>
-								</Image.ToolTip>
-							</Image>
-							<!--Spell 3-->
-							<Image x:Name="ChampionSkillE"  Grid.Column="3" Source="{Binding Path=image.EPath}" Margin="5,15,0,0" Width="55">
-								<Image.ToolTip>
-									<StackPanel Width="230">
-										<TextBlock x:Name="ESkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-										<TextBlock x:Name="ESkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Move Speed: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                            <Label x:Name="MoveSpeedLabel" Content="00/00" Margin="0,8,0,0"/>
+                        </StackPanel>
+                        <ProgressBar x:Name="ChampionMS" Maximum="600" MaxHeight="1000" Margin="10,0,0,0" />
 
-										<Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
-										<StackPanel>
-											<TextBlock x:Name="ESkillCost" Text="Cost:"/>
-											<TextBlock x:Name="ESkillCooldown" Text="Cooldown:"/>
-											<TextBlock x:Name="ESkillRange" Text="Range:"/>
-											<TextBlock x:Name="ESkillEffect" Text="Effect:"/>
-										</StackPanel>
-									</StackPanel>
-								</Image.ToolTip>
-							</Image>
-							<!--Spell 4-->
-							<Image x:Name="ChampionSkillR"  Grid.Column="4" Source="{Binding Path=image.RPath}" Margin="5,15,0,0" Width="55">
-								<Image.ToolTip>
-									<StackPanel Width="230">
-										<TextBlock x:Name="RSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,0"/>
-										<TextBlock x:Name="RSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
-										<Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
-										<StackPanel>
-											<TextBlock x:Name="RSkillCost" Text="Cost:"/>
-											<TextBlock x:Name="RSkillCooldown" Text="Cooldown:"/>
-											<TextBlock x:Name="RSkillRange" Text="Range:"/>
-											<TextBlock x:Name="RSkillEffect" Text="Effect:"/>
-										</StackPanel>
-									</StackPanel>
-								</Image.ToolTip>
-							</Image>
-						</Grid>
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="*"/>
-							</Grid.ColumnDefinitions>
-							<Label Grid.Column="0" Content="Tips:" FontSize="16" Margin="0,10,0,0" />
-							<TextBlock x:Name="ChampionFriendlyTip" Grid.Column="1" Text="Friendly" TextAlignment="Center" Background="PaleGreen" VerticalAlignment="Center" FontSize="13"/>
-							<TextBlock x:Name="ChampionEnemyTip" Grid.Column="2" Text="Enemy" TextAlignment="Center" Background="PaleVioletRed" VerticalAlignment="Center" FontSize="13"/>
-						</Grid>
-					</StackPanel>
-				</Grid>
-			</StackPanel>
-			<!--Right Panel (Champion lore and stats)-->
-			<StackPanel Grid.Column="1" Margin="10,117,20,0">
-				<!--Lore-->
-				<Label Content="Lore" FontSize="25" FontWeight="DemiBold"/>
-				<Label FontSize="13">
-					<AccessText x:Name="ChampionLore" Text="{Binding Path=lore}" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
-				</Label>
-				<!--Stats-->
-				<Grid>
-					<Label Content="Check this champ at:" FontWeight="DemiBold" HorizontalContentAlignment="Left" FontSize="23" Margin="0, 25, 0, 0"/>
-					<Grid>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="*"/>
-						</Grid.ColumnDefinitions>
-						<StackPanel Grid.Column="0">
-							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="200" Height="80" Margin="0,60,0,0"/>
-							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="250" Height="90" Margin="0,0,0,0"/>
-						</StackPanel>
-						<StackPanel Grid.Column="1">
-							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="200" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="100" Margin="0,50,0,0"/>
-							<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="250" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="90" Margin="0,0,0,0"/>
-						</StackPanel>
-					</Grid>
-				</Grid>
-				<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/button3d.png"  Height="85" ToolTip="Show 3D character model" Stretch="UniformToFill" Margin="10,20,0.2,0"/>
-			</StackPanel>
-		</Grid>
-	</StackPanel>
+                        <Label x:Name="ChampionTags" Content="Tags:" HorizontalContentAlignment="Center" Margin="0,9,0,0"/>
+                        <!--Champion spells-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Passive-->
+                            <Image x:Name="ChampionPassive"  Grid.Column="0" Source="{Binding Path=image.passivePath}" Margin="5,30,0,0" Width="55" Height="40">
+                                <Image.ToolTip>
+                                    <StackPanel Width="150">
+                                        <TextBlock x:Name="PassiveSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                                        <Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
+                                        <TextBlock x:Name="PassiveSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify">
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Image.ToolTip>
+                            </Image>
+                            <!--Spell 1-->
+                            <Image  x:Name="ChampionSkillQ" Grid.Column="1" Source="{Binding Path=image.QPath}" Margin="5,15,0,0" Width="55">
+                                <Image.ToolTip>
+                                    <StackPanel Width="230">
+                                        <TextBlock x:Name="QSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                                        <TextBlock x:Name="QSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+                                        <Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
+                                        <StackPanel>
+                                            <TextBlock x:Name="QSkillCost" Text="Cost:"/>
+                                            <TextBlock x:Name="QSkillCooldown" Text="Cooldown:"/>
+                                            <TextBlock x:Name="QSkillRange" Text="Range:"/>
+                                            <TextBlock x:Name="QSkillEffect" Text="Effect:"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Image.ToolTip>
+                            </Image>
+                            <!--Spell 2-->
+                            <Image x:Name="ChampionSkillW"  Grid.Column="2" Source="{Binding Path=image.WPath}" Margin="5,15,0,0" Width="55" >
+                                <Image.ToolTip>
+                                    <StackPanel Width="230">
+                                        <TextBlock x:Name="WSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                                        <TextBlock x:Name="WSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+                                        <Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
+                                        <StackPanel>
+                                            <TextBlock x:Name="WSkillCost" Text="Cost:"/>
+                                            <TextBlock x:Name="WSkillCooldown" Text="Cooldown:"/>
+                                            <TextBlock x:Name="WSkillRange" Text="Range:"/>
+                                            <TextBlock x:Name="WSkillEffect" Text="Effect:"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Image.ToolTip>
+                            </Image>
+                            <!--Spell 3-->
+                            <Image x:Name="ChampionSkillE"  Grid.Column="3" Source="{Binding Path=image.EPath}" Margin="5,15,0,0" Width="55">
+                                <Image.ToolTip>
+                                    <StackPanel Width="230">
+                                        <TextBlock x:Name="ESkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                                        <TextBlock x:Name="ESkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+
+                                        <Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
+                                        <StackPanel>
+                                            <TextBlock x:Name="ESkillCost" Text="Cost:"/>
+                                            <TextBlock x:Name="ESkillCooldown" Text="Cooldown:"/>
+                                            <TextBlock x:Name="ESkillRange" Text="Range:"/>
+                                            <TextBlock x:Name="ESkillEffect" Text="Effect:"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Image.ToolTip>
+                            </Image>
+                            <!--Spell 4-->
+                            <Image x:Name="ChampionSkillR"  Grid.Column="4" Source="{Binding Path=image.RPath}" Margin="5,15,0,0" Width="55">
+                                <Image.ToolTip>
+                                    <StackPanel Width="230">
+                                        <TextBlock x:Name="RSkillName" FontWeight="Bold" FontSize="14" Margin="0,0,0,0"/>
+                                        <TextBlock x:Name="RSkillDescription" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+                                        <Border BorderBrush="Silver" BorderThickness="0,1,0,0" Margin="0,8" />
+                                        <StackPanel>
+                                            <TextBlock x:Name="RSkillCost" Text="Cost:"/>
+                                            <TextBlock x:Name="RSkillCooldown" Text="Cooldown:"/>
+                                            <TextBlock x:Name="RSkillRange" Text="Range:"/>
+                                            <TextBlock x:Name="RSkillEffect" Text="Effect:"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Image.ToolTip>
+                            </Image>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Tips:" FontSize="16" Margin="0,10,0,0" />
+                            <TextBlock x:Name="ChampionFriendlyTip" Grid.Column="1" Text="Friendly" TextAlignment="Center" Background="PaleGreen" VerticalAlignment="Center" FontSize="13"/>
+                            <TextBlock x:Name="ChampionEnemyTip" Grid.Column="2" Text="Enemy" TextAlignment="Center" Background="PaleVioletRed" VerticalAlignment="Center" FontSize="13"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            <!--Right Panel (Champion lore and stats)-->
+            <StackPanel Grid.Column="1" Margin="10,117,20,0">
+                <!--Lore-->
+                <Label Content="Lore" FontSize="25" FontWeight="DemiBold"/>
+                <Label FontSize="13">
+                    <AccessText x:Name="ChampionLore" Text="{Binding Path=lore}" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
+                </Label>
+                <!--Stats-->
+                <Grid>
+                    <Label Content="Check this champ at:" FontWeight="DemiBold" HorizontalContentAlignment="Left" FontSize="23" Margin="0, 25, 0, 0"/>
+                    <Grid>
+                        <StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="10,63,16,-3" HorizontalAlignment="Center">
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="80" Height="30" />
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="80" Height="30" />
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="80" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="50"/>
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="80" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="20"/>
+                            </StackPanel>
+                            
+                            <StackPanel>
+                                <Grid>
+                                    <TabControl>
+                                        <TabItem Header="Weak Against">
+                                            <UserControl:Counters x:Name="ListWeakAgainst"/>
+                                        </TabItem>
+                                        <TabItem Header="Strong Against" >
+                                            <UserControl:Counters  x:Name="ListStrongAgainst"/>
+                                        </TabItem>
+                                        <TabItem Header="Goes Well With" >
+                                            <UserControl:Counters  x:Name="ListWellWith"/>
+                                        </TabItem>
+                                        <TabItem Header="Goes Even With" >
+                                            <UserControl:Counters  x:Name="ListEvenWith"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+                <Image Visibility="Collapsed" Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/button3d.png"  Height="85" ToolTip="Show 3D character model" Stretch="UniformToFill" Margin="10,20,0.2,0"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </UserControl>

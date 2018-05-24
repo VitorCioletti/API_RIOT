@@ -26,7 +26,7 @@
 
 			return document.DocumentNode.SelectNodes($@"//div[@class=""{block}""]")
 										.Descendants()
-										.Take(3)
+										.Take(6)
 										.Where(e => e.Attributes.Contains("class") && e.Attributes["class"].Value == "name")
 										.Select(c => c.InnerHtml);
 		}
