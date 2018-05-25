@@ -360,5 +360,20 @@
     <Resource Include="UserInterface\Images\images\Fiora_P.png" />
     <Resource Include="UserInterface\Images\images\lolchamp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Images\images\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Images\images\lol-oficial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Images\images\lol-wiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Images\images\lolking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Images\images\lol-cgg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

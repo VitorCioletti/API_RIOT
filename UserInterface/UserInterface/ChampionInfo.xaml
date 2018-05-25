@@ -193,10 +193,10 @@
                         <StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="10,63,16,-3" HorizontalAlignment="Center">
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="80" Height="30" />
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="80" Height="30" />
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="80" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="50"/>
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="80" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="20"/>
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="120" Height="50" />
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="120" Height="30" />
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="120" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="70"/>
+                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="120" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="40"/>
                             </StackPanel>
                             
                             <StackPanel>

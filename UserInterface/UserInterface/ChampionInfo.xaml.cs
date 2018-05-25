@@ -99,7 +99,10 @@
         private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>
             ChampionList.List.Where(c => champions.Contains(c.name));
 
-		private void OpenLoLKing(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
+        private void OpenBrowser(string path) =>
+            System.Diagnostics.Process.Start(path);
+
+        private void OpenLoLKing(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser(@"http://www.lolking.net/builds/champion/" + ((System.Windows.Controls.Image)sender).Tag);
 
 		private void OpenOriginalLoL(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
@@ -110,10 +113,10 @@
 
 		private void OpenChampGG(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser("http://www.champion.gg/champion/" + ((System.Windows.Controls.Image)sender).Tag);
-        private void OpenBrowser(string path) =>
-            System.Diagnostics.Process.Start(path);
 
-        private void ListWeakAgainst_Loaded(object sender, System.Windows.RoutedEventArgs e) =>
-            FillWeakAgainstOf(ChampionName.Content.ToString());
+        private void ListWeakAgainst_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+           // FillWeakAgainstOf(ChampionName.Content.ToString());
+        }
     }
 }

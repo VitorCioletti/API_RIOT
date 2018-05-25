@@ -16,7 +16,8 @@
 						<VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
 					</ItemsPanelTemplate>
 				</Menu.ItemsPanel>
-				<Label Content="What A Champ" FontSize="30" HorizontalAlignment="Left" FontWeight="Light" Foreground="White" Margin="0,0,600,0"/>
+                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/icon.png" Height="54" Margin="0,0,-31,0" />
+                <Label Content="What A Champ" FontSize="30" HorizontalAlignment="Left" FontWeight="Light" Foreground="White" Margin="0,0,550,0"/>
 				<!--Champions list button-->
 				<Button x:Name="GoBack" Height="70" Click="GoBack_Click" Width="230" Background="Transparent" BorderThickness="0" Margin="-10" ToolTip="Go back to the champions list" Visibility="Hidden">
 					<Label Content="Go to Champ List" FontSize="25" Foreground="White" FontWeight="Light" Width="211"/>
