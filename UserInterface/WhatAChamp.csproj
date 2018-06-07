@@ -74,7 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Scrapper\CounterScrapper.cs" />
+    <Compile Include="Scrapper\ChampionScrapper.cs" />
     <Compile Include="UserInterface\Counters.xaml.cs">
       <DependentUpon>Counters.xaml</DependentUpon>
     </Compile>

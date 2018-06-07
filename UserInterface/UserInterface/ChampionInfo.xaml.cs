@@ -87,19 +87,21 @@
 			champInfoWindow.HpLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionHp.Maximum}";
 			champInfoWindow.MpLabel.Content = $"{mp}/{champInfoWindow.ChampionMP.Maximum}";
 			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
+
+			ChampionScrapper.UpdateDocumentSelectedChampion();
 		}
 
         private void FillWeakAgainstOf(string champion) =>
-            ListWeakAgainst.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetWeakAgainstOf());
+            ListWeakAgainst.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetWeakAgainstOf());
 
         private void FillStrongAgainstOf(string champion) =>
-            ListStrongAgainst.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetStrongAgainstOf());
+            ListStrongAgainst.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetStrongAgainstOf());
 
         private void FillEvenWith(string champion) =>
-            ListEvenWith.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetEvenWith());
+            ListEvenWith.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetEvenWith());
 
         private void FillGoodWith(string champion) =>
-           ListWellWith.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetWellWith());
+           ListWellWith.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetWellWith());
 
         private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>
             ChampionList.List.Where(c => champions.Contains(c.name));
