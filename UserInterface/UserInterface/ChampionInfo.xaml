@@ -203,16 +203,16 @@
                                 <Grid>
                                     <TabControl>
                                         <TabItem Header="Weak Against">
-                                            <UserControl:Counters x:Name="ListWeakAgainst" Loaded="ListWeakAgainst_Loaded"/>
+                                            <UserControl:Counters x:Name="ListWeakAgainst" IsVisibleChanged="ListWeakAgainst_IsVisibleChanged"/>
                                         </TabItem>
                                         <TabItem Header="Strong Against">
-                                            <UserControl:Counters  x:Name="ListStrongAgainst"/>
+                                            <UserControl:Counters  x:Name="ListStrongAgainst" IsVisibleChanged="ListStrongAgainst_IsVisibleChanged"/>
                                         </TabItem>
                                         <TabItem Header="Goes Well With" >
-                                            <UserControl:Counters  x:Name="ListWellWith"/>
+                                            <UserControl:Counters  x:Name="ListWellWith" IsVisibleChanged="ListWellWith_IsVisibleChanged"/>
                                         </TabItem>
                                         <TabItem Header="Goes Even With" >
-                                            <UserControl:Counters  x:Name="ListEvenWith"/>
+                                            <UserControl:Counters  x:Name="ListEvenWith" IsVisibleChanged="ListEvenWith_IsVisibleChanged"/>
                                         </TabItem>
                                     </TabControl>
                                 </Grid>

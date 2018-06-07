@@ -149,7 +149,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SystemInfo.ico" />
@@ -361,7 +363,7 @@
     <Resource Include="UserInterface\Images\images\lolchamp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UserInterface\Images\images\icon.png" />
+    <Resource Include="UserInterface\Images\images\icons.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UserInterface\Images\images\lol-oficial.png" />

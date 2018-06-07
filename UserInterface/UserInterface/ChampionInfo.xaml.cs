@@ -2,10 +2,13 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Windows.Controls;
+	using System.Windows;
+	using System.Windows.Controls;
 
     public partial class ChampionInfo : UserControl
 	{
+		public static Champion SelectedChampion;
+
 		public ChampionInfo()
 		{
 			InitializeComponent();
@@ -13,6 +16,8 @@
 
 		public static void LoadSelectedChampion(Champion selectedChampion, WhatAChampUI window)
 		{
+			SelectedChampion = selectedChampion;
+
 			var champInfoWindow = window.ChampInfo;
 
 			champInfoWindow.ChampInfo.DataContext = selectedChampion;
@@ -85,16 +90,16 @@
 		}
 
         private void FillWeakAgainstOf(string champion) =>
-            ListWeakAgainst.DataContext = GetChampionFullInformations(CounterScrapper.GetWeakAgainstOf(champion));
+            ListWeakAgainst.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetWeakAgainstOf());
 
         private void FillStrongAgainstOf(string champion) =>
-            ListStrongAgainst.DataContext = GetChampionFullInformations(CounterScrapper.GetStrongAgainstOf(champion));
+            ListStrongAgainst.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetStrongAgainstOf());
 
         private void FillEvenWith(string champion) =>
-            ListEvenWith.DataContext = GetChampionFullInformations(CounterScrapper.GetEvenWith(champion));
+            ListEvenWith.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetEvenWith());
 
         private void FillGoodWith(string champion) =>
-           ListWellWith.DataContext = GetChampionFullInformations(CounterScrapper.GetWellWith(champion));
+           ListWellWith.List.ItemsSource = GetChampionFullInformations(CounterScrapper.GetWellWith());
 
         private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>
             ChampionList.List.Where(c => champions.Contains(c.name));
@@ -114,9 +119,28 @@
 		private void OpenChampGG(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser("http://www.champion.gg/champion/" + ((System.Windows.Controls.Image)sender).Tag);
 
-        private void ListWeakAgainst_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-           // FillWeakAgainstOf(ChampionName.Content.ToString());
-        }
-    }
+		private void ListWeakAgainst_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+		{
+			if (((UIElement)sender).IsVisible)
+				FillWeakAgainstOf(ChampionName.Content.ToString());
+		}
+
+		private void ListStrongAgainst_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (((UIElement)sender).IsVisible)
+				FillStrongAgainstOf(ChampionName.Content.ToString());
+		}
+
+		private void ListWellWith_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (((UIElement)sender).IsVisible)
+				FillGoodWith(ChampionName.Content.ToString());
+		}
+
+		private void ListEvenWith_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (((UIElement)sender).IsVisible)
+				FillEvenWith(ChampionName.Content.ToString());
+		}
+	}
 }

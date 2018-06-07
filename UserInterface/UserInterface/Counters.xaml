@@ -9,14 +9,14 @@
         <ItemsControl x:Name="List">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" Height="100" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="100" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="2" BorderBrush="Transparent">
-                        <Image ToolTip="{Binding Path=name}" Margin="5" Height="50" Width="50" Source="{Binding Path=image.iconPath}"/>
-                    </Border>
+                    <Border>
+                        <Image ToolTip="{Binding Path=name}" Margin="5" Height="90" Width="90" Source="{Binding Path=image.iconPath}"/>
+					</Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

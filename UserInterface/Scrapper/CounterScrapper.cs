@@ -6,29 +6,34 @@
 
 	public static class CounterScrapper
 	{
-		public static IEnumerable<string> GetWeakAgainstOf(string champion) =>
-			ScrapCounterOf(champion, "weak-block");
+		private static HtmlDocument document;
 
-		public static IEnumerable<string> GetStrongAgainstOf(string champion) =>
-			ScrapCounterOf(champion, "strong-block");
-
-		public static IEnumerable<string> GetEvenWith(string champion) =>
-			ScrapCounterOf(champion, "even-block");
-
-		public static IEnumerable<string> GetWellWith(string champion) =>
-			ScrapCounterOf(champion, "good-block");
-
-		private static IEnumerable<string> ScrapCounterOf(string champion, string block)
+		static CounterScrapper()
 		{
-			var url = $"http://www.lolcounter.com/champions/" + champion.ToLower();
+			var url = $"http://www.lolcounter.com/champions/" + ChampionInfo.SelectedChampion.name.ToLower();
 
-			var document = new HtmlWeb().Load(url);
+			document = new HtmlWeb().Load(url);
+		}
 
+		public static IEnumerable<string> GetWeakAgainstOf() =>
+			ScrapDataFrom("weak-block");
+
+		public static IEnumerable<string> GetStrongAgainstOf() =>
+			ScrapDataFrom("strong-block");
+
+		public static IEnumerable<string> GetEvenWith() =>
+			ScrapDataFrom("even-block");
+
+		public static IEnumerable<string> GetWellWith() =>
+			ScrapDataFrom("good-block");
+
+		private static IEnumerable<string> ScrapDataFrom(string block)
+		{
 			return document.DocumentNode.SelectNodes($@"//div[@class=""{block}""]")
 										.Descendants()
-										.Take(6)
 										.Where(e => e.Attributes.Contains("class") && e.Attributes["class"].Value == "name")
-										.Select(c => c.InnerHtml);
+										.Take(6)
+										.Select(e => e.InnerHtml);
 		}
     }
 }
