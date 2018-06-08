@@ -1,10 +1,12 @@
 ﻿namespace WhatAChamp
 {
+	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Threading.Tasks;
 	using System.Windows;
 	using System.Windows.Controls;
+	using System.Windows.Threading;
 
 	public partial class WhatAChampUI : Window
     {
@@ -14,18 +16,26 @@
 			FillTypeClassesComboBox();
         }
 
-		public static void LoadSelectedChampion(Champion selectedChampion)
+		public static Task LoadSelectedChampion(Champion selectedChampion)
 		{
-			var existingWindow = Window.GetWindow(Application.Current.Windows[0]) as WhatAChampUI;
+			return Task.Run(() =>
+			{
+				Action loadSelectedChampion = () =>
+				{
+					var existingWindow = Window.GetWindow(Application.Current.Windows[0]) as WhatAChampUI;
 
-			existingWindow.GoBack.Visibility = Visibility.Visible;
-			existingWindow.lbl_selectChamp.Visibility = Visibility.Collapsed;
-			existingWindow.cmb_typeClasses.Visibility = Visibility.Collapsed;
+					existingWindow.GoBack.Visibility = Visibility.Visible;
+					existingWindow.lbl_selectChamp.Visibility = Visibility.Collapsed;
+					existingWindow.cmb_typeClasses.Visibility = Visibility.Collapsed;
 
-			ChampionInfo.LoadSelectedChampion(selectedChampion, existingWindow);
+					ChampionInfo.LoadSelectedChampion(selectedChampion, existingWindow);
 
-			existingWindow.ChampList.Visibility = Visibility.Collapsed;
-			existingWindow.ChampInfo.Visibility = Visibility.Visible;
+					existingWindow.ChampList.Visibility = Visibility.Collapsed;
+					existingWindow.ChampInfo.Visibility = Visibility.Visible;
+				};
+
+				Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, loadSelectedChampion);
+			});
 		}
 
 		private void FillTypeClassesComboBox()
