@@ -115,7 +115,10 @@
 
 		private void FillWinRateGames()
 		{
+			var winRateGame = BuildScrapper.GetBuildWinRate();
 
+			winRate.Content = winRateGame.Item1;
+			quantityGames.Content = winRateGame.Item2;
 		}
 
         private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>

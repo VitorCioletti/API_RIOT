@@ -9,17 +9,17 @@
 	{
 		private static HtmlDocument Document;
 
-		private static Tuple<string, string> GetBuildWinRate()
-		{
-			var teste = Document.DocumentNode.SelectNodes(@"//div[@class=""build-text""]")
-								 .Descendants("strong");
 
-			return null;
+		public static Tuple<string, string> GetBuildWinRate()
+		{
+			var winRate = GetBuildWrapper().Descendants("strong").ToList();
+
+			return new Tuple<string, string>(winRate[0].InnerText, winRate[1].InnerText);
 		}
 
 		public static IEnumerable<Item> GetCommomBuild()
 		{
-			var build = Document.DocumentNode.SelectNodes(@"//div[@class=""build-wrapper""][1]").First();
+			var build = GetBuildWrapper();
 
 			var buildList = build.Descendants("img")
 								 .Select(e =>
@@ -48,5 +48,8 @@
 
 			Document = new HtmlWeb().Load(url);
 		}
+
+		private static HtmlNode GetBuildWrapper() =>
+			Document.DocumentNode.SelectNodes(@"//div[@class=""build-wrapper""][1]").First();
 	}
 }
