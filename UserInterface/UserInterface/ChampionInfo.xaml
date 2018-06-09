@@ -220,7 +220,7 @@
                             </StackPanel>
 
 							<StackPanel>
-								<Label Content="Commom Build: " FontWeight="DemiBold" FontSize="22" Margin="0,28,0,0"/>
+								<Label Content="Common Build: " FontWeight="DemiBold" FontSize="22" Margin="0,28,0,0"/>
 								<ItemsControl x:Name="CommomBuild" IsVisibleChanged="CommomBuild_IsVisibleChanged">
 									<ItemsControl.ItemsPanel>
 										<ItemsPanelTemplate>
