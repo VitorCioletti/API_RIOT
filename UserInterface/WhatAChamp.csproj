@@ -53,6 +53,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Scrapper\BuildScrapper.cs" />
     <Compile Include="Scrapper\ChampionScrapper.cs" />
     <Compile Include="UserInterface\Counters.xaml.cs">
       <DependentUpon>Counters.xaml</DependentUpon>

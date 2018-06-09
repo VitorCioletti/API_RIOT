@@ -2,6 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+	using System.Text;
+	using System.Web;
 	using System.Windows;
 	using System.Windows.Controls;
 
@@ -24,7 +26,6 @@
 
 			champInfoWindow.LolCGG.Tag = selectedChampion.name;
 			champInfoWindow.LolKing.Tag = selectedChampion.name;
-			champInfoWindow.WikiLol.Tag = selectedChampion.name;
 			champInfoWindow.OficialLol.Tag = selectedChampion.name;
 
 			champInfoWindow.ChampionEnemyTip.ToolTip = selectedChampion.enemyTips[0];
@@ -88,20 +89,34 @@
 			champInfoWindow.MpLabel.Content = $"{mp}/{champInfoWindow.ChampionMP.Maximum}";
 			champInfoWindow.MoveSpeedLabel.Content = $"{moveSpeed}/{champInfoWindow.ChampionMS.Maximum}";
 
-			ChampionScrapper.UpdateDocumentSelectedChampion();
+			UpdateScrappers();
 		}
 
-        private void FillWeakAgainstOf(string champion) =>
+		private static void UpdateScrappers()
+		{
+			ChampionScrapper.UpdateDocumentSelectedChampion();
+			BuildScrapper.UpdateDocumentSelectedChampion();
+		}
+
+        private void FillWeakAgainstOf() =>
             ListWeakAgainst.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetWeakAgainstOf());
 
-        private void FillStrongAgainstOf(string champion) =>
+        private void FillStrongAgainstOf() =>
             ListStrongAgainst.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetStrongAgainstOf());
 
-        private void FillEvenWith(string champion) =>
+        private void FillEvenWith() =>
             ListEvenWith.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetEvenWith());
 
-        private void FillGoodWith(string champion) =>
+        private void FillGoodWith() =>
            ListWellWith.List.ItemsSource = GetChampionFullInformations(ChampionScrapper.GetWellWith());
+
+		private void FillCommomBuild() =>
+			CommomBuild.ItemsSource = BuildScrapper.GetCommomBuild();
+
+		private void FillWinRateGames()
+		{
+
+		}
 
         private IEnumerable<Champion> GetChampionFullInformations(IEnumerable<string> champions) =>
             ChampionList.List.Where(c => champions.Contains(c.name));
@@ -109,40 +124,61 @@
         private void OpenBrowser(string path) =>
             System.Diagnostics.Process.Start(path);
 
+		private bool IsSenderVisible(object sender) => ((UIElement)sender).IsVisible;
+
         private void OpenLoLKing(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser(@"http://www.lolking.net/builds/champion/" + ((System.Windows.Controls.Image)sender).Tag);
 
 		private void OpenOriginalLoL(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser(@"https://www.na.leagueoflegends.com/en/game-info/champions/" + ((System.Windows.Controls.Image)sender).Tag);
 
-		private void OpenLolWiki(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
-			OpenBrowser(@"http://www.leagueoflegends.wikia.com/wiki/" + ((System.Windows.Controls.Image)sender).Tag);
-
 		private void OpenChampGG(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
 			OpenBrowser("http://www.champion.gg/champion/" + ((System.Windows.Controls.Image)sender).Tag);
 
 		private void ListWeakAgainst_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
 		{
-			if (((UIElement)sender).IsVisible)
-				FillWeakAgainstOf(ChampionName.Content.ToString());
+			if (IsSenderVisible(sender))
+				FillWeakAgainstOf();
 		}
 
 		private void ListStrongAgainst_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
 		{
-			if (((UIElement)sender).IsVisible)
-				FillStrongAgainstOf(ChampionName.Content.ToString());
+			if (IsSenderVisible(sender))
+				FillStrongAgainstOf();
 		}
 
 		private void ListWellWith_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
 		{
-			if (((UIElement)sender).IsVisible)
-				FillGoodWith(ChampionName.Content.ToString());
+			if (IsSenderVisible(sender))
+				FillGoodWith();
 		}
 
 		private void ListEvenWith_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
 		{
-			if (((UIElement)sender).IsVisible)
-				FillEvenWith(ChampionName.Content.ToString());
+			if (IsSenderVisible(sender))
+				FillEvenWith();
+		}
+
+		private void CommomBuild_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (IsSenderVisible(sender))
+				FillCommomBuild();
+		}
+
+		private void WinRateGames_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (IsSenderVisible(sender))
+				FillWinRateGames();
+		}
+
+		private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			var item = ((System.Windows.Controls.Image)sender).DataContext as Item;
+
+			var decodedUrl = HttpUtility.HtmlDecode(item.InfoLink.AbsoluteUri);
+			decodedUrl = HttpUtility.UrlDecode(decodedUrl, Encoding.GetEncoding(1252));
+
+			OpenBrowser(decodedUrl);
 		}
 	}
 }

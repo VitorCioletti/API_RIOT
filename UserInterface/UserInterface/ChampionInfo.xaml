@@ -37,7 +37,7 @@
                         </StackPanel>
                         <ProgressBar x:Name="ChampionAttack" Margin="10,0,0,0"  Minimum="0" Maximum="10"/>
 
-                        <StackPanel Orientation="Horizontal">
+						<StackPanel Orientation="Horizontal">
                             <Label Content="Defense: " FontSize="15" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                             <Label x:Name="DefenseLabel" Content="00/00" Margin="0,8,0,0"/>
                         </StackPanel>
@@ -180,26 +180,27 @@
                 </Grid>
             </StackPanel>
             <!--Right Panel (Champion lore and stats)-->
-            <StackPanel Grid.Column="1" Margin="10,117,20,0">
-                <!--Lore-->
+
+	
+			<StackPanel Grid.Column="1" Margin="10,117,20,0">
+				
+				<StackPanel Orientation="Horizontal" Margin="10,-100,16,-3" HorizontalAlignment="Center">
+					<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="160" Height="60" />
+					<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="130" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="70"/>
+					<Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="170" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="90"/>
+				</StackPanel>
+
+				<!--Lore-->
                 <Label Content="Lore" FontSize="25" FontWeight="DemiBold"/>
                 <Label FontSize="13">
                     <AccessText x:Name="ChampionLore" Text="{Binding Path=lore}" TextWrapping="WrapWithOverflow" TextAlignment="Justify"/>
                 </Label>
                 <!--Stats-->
                 <Grid>
-                    <Label Content="Check this champ at:" FontWeight="DemiBold" HorizontalContentAlignment="Left" FontSize="23" Margin="0, 25, 0, 0"/>
                     <Grid>
                         <StackPanel>
-
-                            <StackPanel Orientation="Horizontal" Margin="10,63,16,-3" HorizontalAlignment="Center">
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-oficial.png" x:Name="OficialLol" MouseLeftButtonDown="OpenOriginalLoL" Tag="na.leagueoflegends.com/en/game-info/champions/" ToolTip="Oficial League of Legends" Width="120" Height="50" />
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-wiki.png" x:Name="WikiLol" MouseLeftButtonDown="OpenLolWiki" Tag="leagueoflegends.wikia.com/wiki/" ToolTip="Wiki League of Legends" Width="120" Height="30" />
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lolking.png" x:Name="LolKing" Width="120" MouseLeftButtonDown="OpenLoLKing" Tag="lolking.net/builds/champion/" ToolTip="LolKing" Height="70"/>
-                                <Image Source="pack://application:,,,/WhatAChamp;component/UserInterface/Images/images/lol-cgg.png" x:Name="LolCGG" Width="120" MouseLeftButtonDown="OpenChampGG" Tag="champion.gg/champion/" ToolTip="Champion GG" Height="40"/>
-                            </StackPanel>
                             
-                            <StackPanel>
+                            <StackPanel Margin="0,25,0,0">
                                 <Grid>
                                     <TabControl>
                                         <TabItem Header="Weak Against">
@@ -217,6 +218,30 @@
                                     </TabControl>
                                 </Grid>
                             </StackPanel>
+
+							<StackPanel>
+								<Label Content="Commom Build: " FontWeight="DemiBold" FontSize="22" Margin="0,28,0,0"/>
+								<ItemsControl x:Name="CommomBuild" IsVisibleChanged="CommomBuild_IsVisibleChanged">
+									<ItemsControl.ItemsPanel>
+										<ItemsPanelTemplate>
+											<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="80" ScrollViewer.CanContentScroll="False"/>
+										</ItemsPanelTemplate>
+									</ItemsControl.ItemsPanel>
+									<ItemsControl.ItemTemplate>
+										<DataTemplate>
+											<Image Margin="10,0,10,0" ToolTip="Click for more info." Height="70" Width="70" Source="{Binding Path=ImageSource}" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+										</DataTemplate>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" IsVisibleChanged="WinRateGames_IsVisibleChanged">
+									<Label Content="0%" x:Name="winRate" FontSize="17" Foreground="Green"/>
+									<Label Content="WinRate" FontSize="17" Foreground="Green"/>
+									<Label Content="|" FontSize="19" FontWeight="Bold" />
+									<Label Content="0" x:Name="quantityGames" FontSize="17" Foreground="#333" />
+									<Label Content="Games" FontSize="17" Foreground="#333"/>
+								</StackPanel>
+							</StackPanel>
                             
                         </StackPanel>
                     </Grid>

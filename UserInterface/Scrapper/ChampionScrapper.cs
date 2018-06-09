@@ -6,7 +6,7 @@
 
 	public static class ChampionScrapper
 	{
-		private static HtmlDocument document;
+		private static HtmlDocument Document;
 
 		public static IEnumerable<string> GetWeakAgainstOf() => ScrapDataFrom("weak-block");
 
@@ -20,12 +20,12 @@
 		{
 			var url = $"http://www.lolcounter.com/champions/" + ChampionInfo.SelectedChampion.name.ToLower();
 
-			document = new HtmlWeb().Load(url);
+			Document = new HtmlWeb().Load(url);
 		}
 
 		private static IEnumerable<string> ScrapDataFrom(string block)
 		{
-			return document.DocumentNode.SelectNodes($@"//div[@class=""{block}""]")
+			return Document.DocumentNode.SelectNodes($@"//div[@class=""{block}""]")
 										.Descendants()
 										.Where(e => e.Attributes.Contains("class") && e.Attributes["class"].Value == "name")
 										.Take(6)
